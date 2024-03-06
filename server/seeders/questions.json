@@ -1,5 +1,5 @@
 [
-	{
+  {
 		"question": "Bixi, Bold Dog, Lo Rez, Saint Errant, and Half Acre are all names of what type of company located in Chicago? They are all part of an industry that has exploded in popularity across the US in the 2010s.",
 		"choices": ["Brewery", "Craft Store", "Tech Startup", "Fitness Gym"],
 		"answer": "Brewery"
@@ -199,8 +199,54 @@
 		"choices": ["Blackbeard", "Captain Hook", "Captain Kidd", "Captain Morgan"],
 		"answer": "Captain Morgan"
 	},
-	{ "question": "If a liquor is 100 proof, how much alcohol does it contain by percentage?",
-    "choices": ["40 Percent", "50 Percent", "60 Percent", "70 Percent"],
-    "answer": "50 Percent"
-  }
+	{
+		"question": "If a liquor is 100 proof, how much alcohol does it contain by percentage?",
+		"choices": ["40 Percent", "50 Percent", "60 Percent", "70 Percent"],
+		"answer": "50 Percent"
+	},
+	{
+		"question": "What is the main ingredient in a Margarita cocktail?",
+		"choices": ["Vodka", "Rum", "Gin", "Tequila"],
+		"answer": "Tequila"
+	},
+	{
+		"question": "What type of spirit is made from distilling fermented grain mash and is typically aged in oak barrels?",
+		"choices": ["Rum", "Vodka", "Brandy", "Bourbon"],
+		"answer": "Bourbon"
+	},
+	{
+		"question": "What cocktail is made with tequila, lime juice, and triple sec?",
+		"choices": ["Mojito", "Mai Tai", "Margarita", "Cosmopolitan"],
+		"answer": "Margarita"
+	},
+	{
+		"question": "What is the main ingredient in a gin and tonic?",
+		"choices": ["Vodka", "Rum", "Gin", "Tequila"],
+		"answer": "Gin"
+	},
+	{
+		"question": "What is the name of the traditional rice wine of Japan?",
+		"choices": ["Sake", "Soju", "Makgeolli", "Shochu"],
+		"answer": "Sake"
+	},
+	{
+		"question": "What is the primary ingredient in gin?",
+		"choices": ["Vodka", "Juniper berries", "Rum", "Whiskey"],
+		"answer": "Juniper berries"
+	},
+	{
+		"question": "What is the name of a popular Scottish whisky that is made using malted barley?",
+		"choices": ["Bourbon", "Scotch", "Rye", "Irish Whiskey"],
+		"answer": "Scotch"
+	},
+	{
+		"question": "What is the name for a cocktail made from vodka, tomato juice, and spices?",
+		"choices": ["Bloody Mary", "Screwdriver", "Cosmopolitan", "Mai Tai"],
+		"answer": "Bloody Mary"
+	},
+	{
+		"question": "What is the national drink of Brazil made from fermented sugarcane juice?",
+		"choices": ["Rum", "Cachaça", "Tequila", "Pisco"],
+		"answer": "Cachaça"
+	}
 ]
