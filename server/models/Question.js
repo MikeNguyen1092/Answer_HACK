@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const questionSchema = new Schema({
-  question: {
+  questionText: {
     type: String,
   },
   choices: [{
@@ -9,6 +9,10 @@ const questionSchema = new Schema({
   }],
   answer: {
     type: String
+  },
+  questionAuthor:{
+    type: String,
+    trim: true, 
   }
 });
 

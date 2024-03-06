@@ -39,6 +39,24 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addQuestion: async(_, {questionText, choices, answer}, context) => {
+      if (context.user) {
+        console.log(context.user)
+        const question = await Question.create({
+          questionText,
+          choices,
+          answer,
+          questionAuthor: context.user.username
+      });
+      await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $addToSet: { questions: question._id } }
+      );
+
+      return question
+      }
+      throw AuthenticationError;
     }
   }
 };

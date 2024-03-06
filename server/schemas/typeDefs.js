@@ -7,9 +7,10 @@ const typeDefs = `
   }
 
   type Question {
-    question: String
+    questionText: String
     choices: [String]
     answer: String
+    questionAuthor: String
   }
 
   type Auth {
@@ -26,6 +27,7 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addQuestion(questionText: String, choices: [String], answer: String): Question
   }
 `;
 module.exports = typeDefs;
