@@ -1,0 +1,52 @@
+[
+	{
+		"username": "BlueStar123",
+		"email": "bluestar123@example.com",
+		"password": "SecurePass123"
+	},
+	{
+		"username": "GreenDreamer",
+		"email": "greendreamer@example.com",
+		"password": "Secret12345"
+	},
+	{
+		"username": "SilverFox22",
+		"email": "silverfox22@example.com",
+		"password": "StrongPassword"
+	},
+	{
+		"username": "PurpleSky",
+		"email": "purplesky@example.com",
+		"password": "Pass123word"
+	},
+	{
+		"username": "Sunshine87",
+		"email": "sunshine87@example.com",
+		"password": "Sunbeam456"
+	},
+	{
+		"username": "Moonlighter",
+		"email": "moonlighter@example.com",
+		"password": "LunarPass789"
+	},
+	{
+		"username": "OceanExplorer",
+		"email": "oceanexplorer@example.com",
+		"password": "DeepBlue321"
+	},
+	{
+		"username": "MountainHiker",
+		"email": "mountainhiker@example.com",
+		"password": "PeakClimb876"
+	},
+	{
+		"username": "TechGeek99",
+		"email": "techgeek99@example.com",
+		"password": "CodeMaster234"
+	},
+	{
+		"username": "AdventureSeeker",
+		"email": "adventureseeker@example.com",
+		"password": "ExploreNow567"
+	}
+]
