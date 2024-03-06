@@ -6,6 +6,12 @@ const typeDefs = `
     password: String
   }
 
+  type Question {
+    question: String
+    choices: [String]
+    answer: String
+  }
+
   type Auth {
     token: ID!
     user: User
@@ -14,6 +20,7 @@ const typeDefs = `
   type Query {
     users: [User]
     user(username: String!): User
+    questions: [Question]
   }
 
   type Mutation {
