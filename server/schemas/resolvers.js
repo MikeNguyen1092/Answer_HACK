@@ -8,7 +8,7 @@ const resolvers = {
 		},
 
 		user: async (parent, { userId }) => {
-			const user = await User.findOne({ _id: userId });
+			const user = await User.findOne({ _id: userId }).populate('highScore');
 			if (!user) {
 				throw new Error('No user with that ID');
 			}
