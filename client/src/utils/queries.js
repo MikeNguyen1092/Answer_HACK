@@ -15,7 +15,8 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_QHESTION = gql`
+export const QUERY_THOUGHTS = gql`
+
   query getThoughts {
     thoughts {
       _id
@@ -26,6 +27,7 @@ export const QUERY_QHESTION = gql`
   }
 `;
 
+
 export const QUERY_SINGLE_Question = gql`
   query getSingleQuestion($questionId: ID!) {
     question(questionId: $questionId) {
@@ -33,6 +35,7 @@ export const QUERY_SINGLE_Question = gql`
       questionText
       questionAuthor
       createdAt
+
     }
   }
 `;
@@ -43,10 +46,12 @@ export const QUERY_ME = gql`
       _id
       username
       email
+
       question {
         _id
         questionText
         questionAuthor
+
         createdAt
       }
     }
