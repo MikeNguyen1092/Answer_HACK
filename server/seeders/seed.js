@@ -7,9 +7,21 @@ const cleanDB = require('./cleanDB');
 db.once('open', async () => {
   try {
     await cleanDB('User', 'users');
+    await cleanDB('Question', 'questions')
 
     await User.create(userSeed);
-    await Question.create(questionSeed)
+
+    for (let i = 0; i < questionSeed.length; i++) {
+      const { _id, questionAuthor } = await Question.create(questionSeed[i]);
+      const user = await User.findOneAndUpdate(
+        { username: questionAuthor },
+        {
+          $addToSet: {
+            questions: _id,
+          },
+        }
+      );
+    }
 
     
   } catch (err) {

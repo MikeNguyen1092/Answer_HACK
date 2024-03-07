@@ -1,251 +1,251 @@
 [
   {
-		"question": "Bixi, Bold Dog, Lo Rez, Saint Errant, and Half Acre are all names of what type of company located in Chicago? They are all part of an industry that has exploded in popularity across the US in the 2010s.",
+		"questionText": "Bixi, Bold Dog, Lo Rez, Saint Errant, and Half Acre are all names of what type of company located in Chicago? They are all part of an industry that has exploded in popularity across the US in the 2010s.",
 		"choices": ["Brewery", "Craft Store", "Tech Startup", "Fitness Gym"],
 		"answer": "Brewery"
 	},
 	{
-		"question": "The Reinheitsgebot is a series of regulations on the production of beer in what country?",
+		"questionText": "The Reinheitsgebot is a series of regulations on the production of beer in what country?",
 		"choices": ["France", "Germany", "Italy", "Spain"],
 		"answer": "Germany"
 	},
 	{
-		"question": "Flathead Lake, Red Lodge, Bozeman, Harvest Moon, and Blackfoot River are all names of what type of company located in Montana? They are all part of an industry that has exploded in popularity across the US in the 2010s.",
+		"questionText": "Flathead Lake, Red Lodge, Bozeman, Harvest Moon, and Blackfoot River are all names of what type of company located in Montana? They are all part of an industry that has exploded in popularity across the US in the 2010s.",
 		"choices": ["Art Galleries", "Bike Shops", "Breweries", "Coffee Roasters"],
 		"answer": "Breweries"
 	},
 	{
-		"question": "A golden IPA made by New Belgium Brewing is ______ Ranger. Fill in the one-word “V” blank, also the name of a Caribbean religion that combines Roman Catholicism with African magic.",
+		"questionText": "A golden IPA made by New Belgium Brewing is ______ Ranger. Fill in the one-word “V” blank, also the name of a Caribbean religion that combines Roman Catholicism with African magic.",
 		"choices": ["Mystic Ranger", "Spirit Ranger", "Enchant Ranger", "Voodoo Ranger"],
 		"answer": "Voodoo Ranger"
 	},
 	{
-		"question": "Which yeast byproduct makes beer bubbly (or carbonated, if you want to get technical)?",
+		"questionText": "Which yeast byproduct makes beer bubbly (or carbonated, if you want to get technical)?",
 		"choices": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
 		"answer": "Carbon Dioxide"
 	},
 	{
-		"question": "Tooheys, Victoria Bitter, and Coopers are all popular 'bevvies' from which Southern Hemisphere country?",
+		"questionText": "Tooheys, Victoria Bitter, and Coopers are all popular 'bevvies' from which Southern Hemisphere country?",
 		"choices": ["New Zealand", "Australia", "South Africa", "Argentina"],
 		"answer": "Australia"
 	},
 	{
-		"question": "What beer, the flagship brand of the Boston Beer Company, was named after a US founding father who led pro-American and anti-British propaganda efforts and was the cousin of future president John?",
+		"questionText": "What beer, the flagship brand of the Boston Beer Company, was named after a US founding father who led pro-American and anti-British propaganda efforts and was the cousin of future president John?",
 		"choices": ["John Hancock", "Benjamin Franklin", "George Washington", "Samuel Adams"],
 		"answer": "Samuel Adams"
 	},
 	{
-		"question": "The wise owl on the label could tell you: Hatachino Nest Japanese Classic Ale is brewed in cedar casks previously used to brew what rice-based alcoholic drink?",
+		"questionText": "The wise owl on the label could tell you: Hatachino Nest Japanese Classic Ale is brewed in cedar casks previously used to brew what rice-based alcoholic drink?",
 		"choices": ["Shochu", "Soju", "Sake", "Umeshu"],
 		"answer": "Sake"
 	},
 	{
-		"question": "In 2012, Anheuser-Busch released a 137-calorie variety of Bud Light in a translucent blue glass bottle under what name, which includes a metallic element whose Periodic Table symbol is Pt?",
+		"questionText": "In 2012, Anheuser-Busch released a 137-calorie variety of Bud Light in a translucent blue glass bottle under what name, which includes a metallic element whose Periodic Table symbol is Pt?",
 		"choices": ["Copper Select", "Bud Light Platinum", "Gold Reserve", "Silver Lite"],
 		"answer": "Bud Light Platinum"
 	},
 	{
-		"question": "The beer manufacturer that sells Corona and Modelo is known as ______ Brands. Fill in the one-word “C” blank, also a word for a group of stars that form a recognizable pattern and is sometimes named after mythology.",
+		"questionText": "The beer manufacturer that sells Corona and Modelo is known as ______ Brands. Fill in the one-word “C” blank, also a word for a group of stars that form a recognizable pattern and is sometimes named after mythology.",
 		"choices": ["Starlight Brands", "Celestial Brands", "Galactic Brands", "Constellation Brands"],
 		"answer": "Constellation Brands"
 	},
 	{
-		"question": "What pale lager is produced by the Mexican brewery Cerveceria Modelo and is owned by the Belgian company AB InBev? It shares its name with the outermost layer of the Sun.",
+		"questionText": "What pale lager is produced by the Mexican brewery Cerveceria Modelo and is owned by the Belgian company AB InBev? It shares its name with the outermost layer of the Sun.",
 		"choices": ["Sol", "Radiance", "Corona", "Aurora"],
 		"answer": "Corona"
 	},
 	{
-		"question": "Because a Czech company owns rights to the full name in Europe, the American beer sold as 'Bud' in Europe is sold under what longer name in North America?",
+		"questionText": "Because a Czech company owns rights to the full name in Europe, the American beer sold as 'Bud' in Europe is sold under what longer name in North America?",
 		"choices": ["King of Beers", "Budweiser", "Bud Royale", "Bud Supreme"],
 		"answer": "Budweiser"
 	},
 	{
-		"question": "First introduced in 1933, Clydesdale horses have been famously advertised in association with which Anheuser-Busch brand? Their appearance in Super Bowl TV ads has been a long-standing tradition since 1986.",
+		"questionText": "First introduced in 1933, Clydesdale horses have been famously advertised in association with which Anheuser-Busch brand? Their appearance in Super Bowl TV ads has been a long-standing tradition since 1986.",
 		"choices": ["Bud Reserve", "Bud Light", "Budweiser", "Bud Select"],
 		"answer": "Budweiser"
 	},
 	{
-		"question": "Bailey Jankowski’s clothing retailer, the Maine Lifestyle Company, is based out of what “B” Maine city? The city name sounds like someone who makes beer or perhaps plays baseball in Milwaukee.",
+		"questionText": "Bailey Jankowski’s clothing retailer, the Maine Lifestyle Company, is based out of what “B” Maine city? The city name sounds like someone who makes beer or perhaps plays baseball in Milwaukee.",
 		"choices": ["Hopsville", "Aleburg", "Barleytown", "Brewer, Maine"],
 		"answer": "Brewer, Maine"
 	},
 	{
-		"question": "During WWI, the Battle of Beersheba took place in what is now known as Türkiye but back then was known as the ______ Empire.",
+		"questionText": "During WWI, the Battle of Beersheba took place in what is now known as Türkiye but back then was known as the ______ Empire.",
 		"choices": ["Byzantine", "Persian", "Roman", "Ottoman"],
 		"answer": "Ottoman"
 	},
 	{
-		"question": "What beer brand's trademarked color-changing label alerts a consumer when a can or bottle is 'as cold as the Rockies'?",
+		"questionText": "What beer brand's trademarked color-changing label alerts a consumer when a can or bottle is 'as cold as the Rockies'?",
 		"choices": ["Ice Mountain", "Chill Brew", "Frosty Pils", "Coors"],
 		"answer": "Coors"
 	},
 	{
-		"question": "What measurement does the acronym ABV stand for?",
+		"questionText": "What measurement does the acronym ABV stand for?",
 		"choices": ["Aroma and Body Verification", "Average Beer Viscosity", "Alcoholic Beverage Value", "Alcohol by Volume"],
 		"answer": "Alcohol by Volume"
 	},
 	{
-		"question": "In July 2021, Usain Bolt did a promotion allowing bar patrons to open a 'running tab' to get a free pour of the Ultra version of what American beer brand?",
+		"questionText": "In July 2021, Usain Bolt did a promotion allowing bar patrons to open a 'running tab' to get a free pour of the Ultra version of what American beer brand?",
 		"choices": ["Bud Light", "Corona", "Miller Lite", "Michelob"],
 		"answer": "Michelob"
 	},
 	{
-		"question": "Dublin's St. James's Gate is the name of the primary brewery of what harp-logoed brand of stout?",
+		"questionText": "Dublin's St. James's Gate is the name of the primary brewery of what harp-logoed brand of stout?",
 		"choices": ["Heineken", "Guinness", "StoutMaster", "Murphy's"],
 		"answer": "Guinness"
 	},
 	{
-		"question": "If you’re at a location in France, Germany, or several other European countries, which fast food place lets you order a beer with your Quarter Pounder?",
+		"questionText": "If you’re at a location in France, Germany, or several other European countries, which fast food place lets you order a beer with your Quarter Pounder?",
 		"choices": ["Burger King", "McDonald's", "Subway", "KFC"],
 		"answer": "McDonald's"
 	},
 	{
-		"question": "The logo of which beer company features the number '1759' (the year of it was founded) and a cláirseach, a type of Celtic harp featured on the British, Irish, and Canadian coats of arms?",
+		"questionText": "The logo of which beer company features the number '1759' (the year of it was founded) and a cláirseach, a type of Celtic harp featured on the British, Irish, and Canadian coats of arms?",
 		"choices": ["Bass Ale", "Harp Lager", "Guinness", "Smithwick's"],
 		"answer": "Guinness"
 	},
 	{
-		"question": "It's a type of beer intertwined with the history of porters. It's also a word in the dictionary that can mean bulky, brave, or resolute. What is it?",
+		"questionText": "It's a type of beer intertwined with the history of porters. It's also a word in the dictionary that can mean bulky, brave, or resolute. What is it?",
 		"choices": ["Amber", "Stout", "Porter", "Ale"],
 		"answer": "Stout"
 	},
 	{
-		"question": "In general, the basic ingredients of beer are water, a starch source (such as malted barley), flavoring (such as hops), and what other critical ingredient?",
+		"questionText": "In general, the basic ingredients of beer are water, a starch source (such as malted barley), flavoring (such as hops), and what other critical ingredient?",
 		"choices": ["Yeast", "Carbonation", "Barley", "Malt"],
 		"answer": "Yeast"
 	},
 	{
-		"question": "Besides Reese's Pieces, what titular movie alien gets tipsy on a few too many cans of beer he discovers in Elliott and Gertie's refrigerator?",
+		"questionText": "Besides Reese's Pieces, what titular movie alien gets tipsy on a few too many cans of beer he discovers in Elliott and Gertie's refrigerator?",
 		"choices": ["E.T.", "ALF", "Predator", "Yoda"],
 		"answer": "E.T."
 	},
 	{
-		"question": "Used as either a bittering, flavoring, or stability agent, the plant Humulus lupulus has been increasingly used in beer during the 21st century. By what name is this species more commonly known?",
+		"questionText": "Used as either a bittering, flavoring, or stability agent, the plant Humulus lupulus has been increasingly used in beer during the 21st century. By what name is this species more commonly known?",
 		"choices": ["Malt", "Barley", "Hops", "Wheat"],
 		"answer": "Hops"
 	},
 	{
-		"question": "What beer brand defied the recent negative connotations of its name to see a 13% increase in profits last year, putting it 63rd on Forbes’ 100 most valuable brands 2022?",
+		"questionText": "What beer brand defied the recent negative connotations of its name to see a 13% increase in profits last year, putting it 63rd on Forbes’ 100 most valuable brands 2022?",
 		"choices": ["Corona", "Budweiser", "Heineken", "Guinness"],
 		"answer": "Corona"
 	},
 	{
-		"question": "Based on a true story, the 2015 film 'Kidnapping Mr. Heineken' starred what 'Silence of the Lambs' Oscar-winner as Freddy Heineken?",
+		"questionText": "Based on a true story, the 2015 film 'Kidnapping Mr. Heineken' starred what 'Silence of the Lambs' Oscar-winner as Freddy Heineken?",
 		"choices": ["Liam Neeson", "Sean Connery", "Anthony Hopkins", "Tom Hanks"],
 		"answer": "Anthony Hopkins"
 	},
 	{
-		"question": "Sahti, a style of farmhouse ale filtered through juniper twigs in a tun called a kuurna, is a traditional beer from what Nordic country?",
+		"questionText": "Sahti, a style of farmhouse ale filtered through juniper twigs in a tun called a kuurna, is a traditional beer from what Nordic country?",
 		"choices": ["Sweden", "Denmark", "Norway", "Finland"],
 		"answer": "Finland"
 	},
 	{
-		"question": "Maybe he was drunk: the head of FIFA defended Qatar's recent decision to ban sales of what beverage at the World Cup?",
+		"questionText": "Maybe he was drunk: the head of FIFA defended Qatar's recent decision to ban sales of what beverage at the World Cup?",
 		"choices": ["Water", "Soda", "Tea", "Beer"],
 		"answer": "Beer"
 	},
 	{
-		"question": "What popular cocktail takes its inspiration from Ernest Hemingway?",
+		"questionText": "What popular cocktail takes its inspiration from Ernest Hemingway?",
 		"choices": ["Margarita", "Martini", "Hemingway Daiquiri", "Negroni"],
 		"answer": "Hemingway Daiquiri"
 	},
 	{
-		"question": "What drink has vodka, coffee liqueur, espresso, or freshly brewed coffee?",
+		"questionText": "What drink has vodka, coffee liqueur, espresso, or freshly brewed coffee?",
 		"choices": ["Mojito", "Espresso Martini", "Whiskey Sour", "Cosmopolitan"],
 		"answer": "Espresso Martini"
 	},
 	{
-		"question": "What drink uses Orange juice, Pineapple juice, Lime juice, Rum, and Grenadine?",
+		"questionText": "What drink uses Orange juice, Pineapple juice, Lime juice, Rum, and Grenadine?",
 		"choices": ["Piña Colada", "Mai Tai", "Caribbean Rum", "Zombie"],
 		"answer": "Caribbean Rum"
 	},
 	{
-		"question": "In most countries, it is illegal to call sparkling wine by what name unless it was produced in a certain region of France?",
+		"questionText": "In most countries, it is illegal to call sparkling wine by what name unless it was produced in a certain region of France?",
 		"choices": ["Prosecco", "Cava", "Champagne", "Asti"],
 		"answer": "Champagne"
 	},
 	{
-		"question": "Guinness beer was first brewed in which country?",
+		"questionText": "Guinness beer was first brewed in which country?",
 		"choices": ["England", "Ireland", "Scotland", "Wales"],
 		"answer": "Ireland"
 	},
 	{
-		"question": "What popular soda beverage was originally developed as a mixer for whiskey?",
+		"questionText": "What popular soda beverage was originally developed as a mixer for whiskey?",
 		"choices": ["Coca-Cola", "Pepsi", "Sprite", "Mountain Dew"],
 		"answer": "Mountain Dew"
 	},
 	{
-		"question": "To be legally sold as bourbon, a whiskey’s mash must contain at least 51% of what grain?",
+		"questionText": "To be legally sold as bourbon, a whiskey’s mash must contain at least 51% of what grain?",
 		"choices": ["Wheat", "Barley", "Corn", "Rye"],
 		"answer": "Corn"
 	},
 	{
-		"question": "Champagne is a sparkling wine made from grapes grown in the Champagne region of which country?",
+		"questionText": "Champagne is a sparkling wine made from grapes grown in the Champagne region of which country?",
 		"choices": ["Italy", "Spain", "France", "Germany"],
 		"answer": "France"
 	},
 	{
-		"question": "Malbec, Sangiovese, and Syrah are all a type of what?",
+		"questionText": "Malbec, Sangiovese, and Syrah are all a type of what?",
 		"choices": ["Vodka", "Whiskey", "Gin", "Wine"],
 		"answer": "Wine"
 	},
 	{
-		"question": "A Moscow Mule is a type of cocktail popularly served in what?",
+		"questionText": "A Moscow Mule is a type of cocktail popularly served in what?",
 		"choices": ["Martini Glass", "Copper Mug", "Highball Glass", "Mason Jar"],
 		"answer": "Copper Mug"
 	},
 	{
-		"question": "What notable brand of alcohol takes its name from the romanticized, storied life of a Welsh buccaneer who routed the Spanish in an attack on Panama City in 1671?",
+		"questionText": "What notable brand of alcohol takes its name from the romanticized, storied life of a Welsh buccaneer who routed the Spanish in an attack on Panama City in 1671?",
 		"choices": ["Blackbeard", "Captain Hook", "Captain Kidd", "Captain Morgan"],
 		"answer": "Captain Morgan"
 	},
 	{
-		"question": "If a liquor is 100 proof, how much alcohol does it contain by percentage?",
+		"questionText": "If a liquor is 100 proof, how much alcohol does it contain by percentage?",
 		"choices": ["40 Percent", "50 Percent", "60 Percent", "70 Percent"],
 		"answer": "50 Percent"
 	},
 	{
-		"question": "What is the main ingredient in a Margarita cocktail?",
+		"questionText": "What is the main ingredient in a Margarita cocktail?",
 		"choices": ["Vodka", "Rum", "Gin", "Tequila"],
 		"answer": "Tequila"
 	},
 	{
-		"question": "What type of spirit is made from distilling fermented grain mash and is typically aged in oak barrels?",
+		"questionText": "What type of spirit is made from distilling fermented grain mash and is typically aged in oak barrels?",
 		"choices": ["Rum", "Vodka", "Brandy", "Bourbon"],
 		"answer": "Bourbon"
 	},
 	{
-		"question": "What cocktail is made with tequila, lime juice, and triple sec?",
+		"questionText": "What cocktail is made with tequila, lime juice, and triple sec?",
 		"choices": ["Mojito", "Mai Tai", "Margarita", "Cosmopolitan"],
 		"answer": "Margarita"
 	},
 	{
-		"question": "What is the main ingredient in a gin and tonic?",
+		"questionText": "What is the main ingredient in a gin and tonic?",
 		"choices": ["Vodka", "Rum", "Gin", "Tequila"],
 		"answer": "Gin"
 	},
 	{
-		"question": "What is the name of the traditional rice wine of Japan?",
+		"questionText": "What is the name of the traditional rice wine of Japan?",
 		"choices": ["Sake", "Soju", "Makgeolli", "Shochu"],
 		"answer": "Sake"
 	},
 	{
-		"question": "What is the primary ingredient in gin?",
+		"questionText": "What is the primary ingredient in gin?",
 		"choices": ["Vodka", "Juniper berries", "Rum", "Whiskey"],
 		"answer": "Juniper berries"
 	},
 	{
-		"question": "What is the name of a popular Scottish whisky that is made using malted barley?",
+		"questionText": "What is the name of a popular Scottish whisky that is made using malted barley?",
 		"choices": ["Bourbon", "Scotch", "Rye", "Irish Whiskey"],
 		"answer": "Scotch"
 	},
 	{
-		"question": "What is the name for a cocktail made from vodka, tomato juice, and spices?",
+		"questionText": "What is the name for a cocktail made from vodka, tomato juice, and spices?",
 		"choices": ["Bloody Mary", "Screwdriver", "Cosmopolitan", "Mai Tai"],
 		"answer": "Bloody Mary"
 	},
 	{
-		"question": "What is the national drink of Brazil made from fermented sugarcane juice?",
+		"questionText": "What is the national drink of Brazil made from fermented sugarcane juice?",
 		"choices": ["Rum", "Cachaça", "Tequila", "Pisco"],
 		"answer": "Cachaça"
 	}
