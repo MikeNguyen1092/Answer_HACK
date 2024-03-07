@@ -12,6 +12,7 @@ const Signup = () => {
     email: '',
     password: '',
   });
+  console.log(formState);
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
