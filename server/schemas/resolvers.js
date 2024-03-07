@@ -8,7 +8,7 @@ const resolvers = {
     },
 
     user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
+      return User.findOne({ _id: userId }).populate('highScore');
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     questions: async () => {
