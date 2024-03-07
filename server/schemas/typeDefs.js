@@ -8,6 +8,7 @@ const typeDefs = `
   }
 
   type Question {
+    _id: ID
     questionText: String
     choices: [String]
     answer: String
@@ -21,8 +22,10 @@ const typeDefs = `
 
   type Query {
     users: [User]
-    user(username: String!): User
+    user(userId: ID!): User
     questions: [Question]
+    question(questionId: ID!): Question
+    
   }
 
   type Mutation {
