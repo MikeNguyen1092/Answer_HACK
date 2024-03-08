@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import GamePage from './pages/GamePage';
 import Error from './pages/Error';
 import Highscore from './pages/Highscore.jsx';
+import Score from './components/Score/index.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         element: <GamePage />
       },
      // {scores page}, //
+     {
+path: "Score",
+element:<Score/>
+     },
 
      {
       path: '/highscore',

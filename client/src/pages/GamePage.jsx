@@ -4,6 +4,7 @@ import backgroundImage from '../assets/images/tapper.gif';
 
 const GamePage = () => {
   const mainStyle = {
+
     margin: 0,  
     padding: 0, 
 
@@ -19,6 +20,7 @@ const GamePage = () => {
     height: '100vh',
     width: '100vw',
     textAlign: 'center'
+
   };
 
   const overlayStyle = {
@@ -29,12 +31,15 @@ const GamePage = () => {
   };
 
   return (
+
     <div style={mainStyle}>
       <div style={overlayStyle} className="flex-row justify-center text-bold">
         <h1>Beer related trivia while enjoying a couple.</h1>
         <QuestionsForm />
       </div>
     </div>
+
+  
   );
 };
 
