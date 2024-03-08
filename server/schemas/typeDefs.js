@@ -5,6 +5,7 @@ const typeDefs = `
     email: String
     password: String
     highScore: Int
+    questions: [Question]
   }
 
   type Question {

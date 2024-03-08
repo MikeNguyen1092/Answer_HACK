@@ -8,7 +8,10 @@ const resolvers = {
 		},
 
 		user: async (parent, { userId }) => {
-			const user = await User.findOne({ _id: userId }).populate('highScore');
+			const user = await User.findOne({ _id: userId }).populate('highScore').populate({
+				path: 'questions',
+				model: 'Question'
+			});
 			if (!user) {
 				throw new Error('No user with that ID');
 			}
@@ -53,7 +56,6 @@ const resolvers = {
 		},
 		addQuestion: async (_, { questionText, choices, answer }, context) => {
 			if (context.user) {
-				console.log(context.user);
 				const question = await Question.create({
 					questionText,
 					choices,

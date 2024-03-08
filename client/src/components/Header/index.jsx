@@ -19,7 +19,7 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/me">
+              <Link className="btn btn-lg btn-info m-2" to="/user">
                 {/* Run the getProfile() method to get access to the unencrypted token value in order to retrieve the user's username  */}
                 {Auth.getProfile().authenticatedPerson.username}'s profile
               </Link>

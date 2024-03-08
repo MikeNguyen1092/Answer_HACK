@@ -9,9 +9,10 @@ import {
   
   import Header from './components/Header';
   import Footer from './components/Footer';
-  import 'bootstrap/dist/css/bootstrap.css'
-  import "./App.css"
-  import "./index.css"
+  import 'bootstrap/dist/css/bootstrap.css';
+  import "./App.css";
+  import "./index.css";
+
 
   // Construct our main GraphQL API endpoint
   const httpLink = createHttpLink({
@@ -41,15 +42,15 @@ import {
     return (
       <ApolloProvider client={client}>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+        <Header />
           <div className="container">
             <Outlet />
           </div>
           <Footer />
+          
         </div>
       </ApolloProvider>
     );
   }
   
   export default App;
-  

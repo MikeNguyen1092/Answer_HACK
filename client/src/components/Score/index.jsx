@@ -1,6 +1,5 @@
-import Score from "../components/Score";
+const Score = () => {
 
-const HighScore = () => {
 	function showHighScore() {
 		const highScore = getHighScoreFromLocalStorage();
 		alert(`High Score: ${highScore}`);
@@ -21,4 +20,4 @@ const HighScore = () => {
 	);
 };
 
-export default HighScore;
+export default Score;
