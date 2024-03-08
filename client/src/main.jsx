@@ -38,7 +38,7 @@ const router = createBrowserRouter([
 			// {scores page}, //
 
 			{
-				path: '/user',
+				path: '/me',
 				element: <User />
 			}
 		],

@@ -1,28 +1,19 @@
-import { Navigate, useParams } from 'react-router-dom';
+
 import { useQuery } from '@apollo/client';
-import { QUERY_USER } from '../utils/queries';
-import Auth from '../utils/auth';
+import { QUERY_ME } from '../utils/queries';
+//import { ADD_QUESTION } from '../utils/mutations'
 
 const User = () => {
-	const { userId: userParam } = useParams();
-
-
-	const { loading, error, data } = useQuery(QUERY_USER, {
-		variables: { userId: userParam },
-	});
-
-	if (Auth.loggedIn && Auth.getProfile().authenticatedPerson.username === userParam) {
-		return <Navigate to="/home" />;
-	}
+	const { loading, data, error } = useQuery(QUERY_ME);
 
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error: {error.message}</p>;
 
-	const user = data.user;
+	const user = data?.me;
+	
 
 	return (
 		<div>
-			<h1>{user.username}'s Profile</h1>
 			<h2>Questions</h2>
 			{user.questions.map((question, index) => (
 				<div key={index}>
