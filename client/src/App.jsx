@@ -42,7 +42,7 @@ import {
   function App() {
     return (
       <ApolloProvider client={client}>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="flex-column justify-flex-start min-100-vh min-100-vw">
           <Header />
           <div className="container">
             <Outlet />
