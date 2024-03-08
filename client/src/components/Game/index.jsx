@@ -23,17 +23,18 @@ const QuestionsForm = () => {
     }
   };
 
+
   return (
     <div>
       <h2>Question {currentQuestionIndex + 1}</h2>
       <p>{questions[currentQuestionIndex].questionText}</p>
-      <ul>
+      <ul style={{ textAlign: 'center', paddingLeft: 0, listStyle: 'none' }}>
         {questions[currentQuestionIndex].choices.map((choice, choiceIndex) => (
-          <li key={choiceIndex}>{choice}</li>
+          <li  key={choiceIndex}><button onClick={handleNextQuestion}style={{ background: 'none', border: 'none', padding: '0', margin: '0', cursor: 'pointer' }}>{choice}</button></li>
         ))}
       </ul>
       <p>Answer: {questions[currentQuestionIndex].answer}</p>
-      <button onClick={handleNextQuestion}>Next Question</button>
+      
     </div>
   );
 };
