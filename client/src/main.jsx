@@ -9,6 +9,7 @@ import Login from './pages/Login';
 // import SingleThought from './pages/SingleThought';
 // import Profile from './pages/Profile';
 import Error from './pages/Error';
+import Highscore from './pages/Highscore.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
 
      // {scores page}, //
 
+     {
+      path: '/highscore',
+      element: <Highscore />
+    },
 
     ]
   }

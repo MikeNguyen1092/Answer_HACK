@@ -1,4 +1,4 @@
-import QuestionsForm  from '../components/Game';
+// import QuestionsForm  from '../components/Game';
 
 const Home = () => {
 
@@ -6,7 +6,7 @@ const Home = () => {
 		<main>
 			<div className="flex-row justify-center">
 				<h1>hello</h1>
-        <QuestionsForm />
+        {/* <QuestionsForm /> */}
 			</div>
 		</main>
 	);

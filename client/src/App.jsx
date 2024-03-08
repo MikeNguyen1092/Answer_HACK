@@ -12,6 +12,8 @@ import {
   import 'bootstrap/dist/css/bootstrap.css'
   import "./App.css"
   import "./index.css"
+  //import the comp score
+  import "./components/Score/index";
 
   // Construct our main GraphQL API endpoint
   const httpLink = createHttpLink({

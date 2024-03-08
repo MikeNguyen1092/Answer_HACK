@@ -1,25 +1,12 @@
-const HighScore=()=> {
-    function showHighScore() {
-        const highScore = getHighScoreFromLocalStorage();
-        alert(`High Score: ${highScore}`);
-    }
+import Score from "../components/Score";
 
-    function getHighScoreFromLocalStorage() {
-      const savedScore = localStorage.getItem('highScore');
-        return savedScore || 'No high score yet';
-    }
-
-return(
-<main>
-<div>
-<h1>"High score will go here"</h1></div>
-<button onClick="showHighScore()">HighScore
-</button>
-</main>
-
-);
+const Highscore = () => {
+  return (
+    <>
+      <div>Highscore</div>
+      <Score/>
+    </>
+  );
 };
 
-export default HighScore;
-
-  
+export default Highscore;
