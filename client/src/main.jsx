@@ -6,8 +6,7 @@ import App from './App.jsx'
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-// import SingleThought from './pages/SingleThought';
-// import Profile from './pages/Profile';
+import GamePage from './pages/GamePage';
 import Error from './pages/Error';
 
 const router = createBrowserRouter([
@@ -28,7 +27,10 @@ const router = createBrowserRouter([
         element: <Signup />
       },
       // {game page,} //
-
+      {
+        path: '/gamepage',
+        element: <GamePage />
+      }
      // {scores page}, //
 
 
