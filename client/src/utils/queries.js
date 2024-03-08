@@ -15,6 +15,16 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_QUESTION = gql`
+query getQuestions {
+  questions {
+    questionText
+    choices
+    answer
+  }
+}
+`
+
 export const QUERY_THOUGHTS = gql`
 
   query getThoughts {
