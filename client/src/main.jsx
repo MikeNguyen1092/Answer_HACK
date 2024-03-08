@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: '/gamepage',
         element: <GamePage />
-      }
+      },
      // {scores page}, //
 
      {
