@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-
 import Auth from '../../utils/auth';
 
 const Header = () => {
@@ -7,36 +6,45 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+
   return (
-    <header className="bg-danger text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <div>
-          <Link className="text-light" to="/">
-            <h1 className="m-0">Answer Hack</h1>
-          </Link>
-          <p className="m-0">Gettin jiggy with it</p>
-        </div>
-        <div>
+    <header className="bg-dark lighten-2 text-light mb-4 py-3">
+      <div className="container d-flex justify-content-between align-items-center">
+        <div className="text-left">
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/me">
-                {/* Run the getProfile() method to get access to the unencrypted token value in order to retrieve the user's username  */}
+              <Link className="btn btn-sm btn-info m-2" to="/me">
                 {Auth.getProfile().authenticatedPerson.username}'s profile
               </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+              <button className="btn btn-sm btn-light m-2" onClick={logout}>
                 Logout
               </button>
+              <Link className="btn btn-sm btn-info m-2" to="/gamepage">
+                Start🍺
+              </Link>
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
+              <Link className="btn btn-sm btn-light m-2" to="/login">
                 Login
               </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
+              <Link className="btn btn-sm btn-light m-2" to="/signup">
                 Signup
               </Link>
             </>
           )}
+        </div>
+        <div className="text-center d-flex align-items-center">
+          <Link className="text-light" to="/" style={{ textDecoration: 'none' }}>
+            <h1 className="m-0">Tap Room Trivia</h1>
+            <p className="m-0">For every round you're not in first, you're last!</p>
+          </Link>
+          
+        </div>
+        <div className="text-right">
+          <Link className="btn btn-sm btn-light m-2" to="/score">
+            Highscores
+          </Link>
         </div>
       </div>
     </header>

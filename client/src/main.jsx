@@ -5,37 +5,44 @@ import App from './App.jsx';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-// import Game from './pages/Game';
-// import SingleThought from './pages/SingleThought';
-// import Profile from './pages/Profile';
+import GamePage from './pages/GamePage';
 import Error from './pages/Error';
-import User from './pages/User.jsx';
+import Highscore from './pages/Highscore.jsx';
+import Score from './components/Score/index.jsx';
 
 const router = createBrowserRouter([
-	{
-		path: '/',
-		element: <App />,
-		error: <Error />,
-		children: [
-			{
-				index: true,
-				element: <Home />,
-			},
-			{
-				path: '/login',
-				element: <Login />,
-			},
-			{
-				path: '/signup',
-				element: <Signup />,
-			},
-			// {
-			// 	// {game page,} //
-			// 	path: '/game',
-			// 	element: <Game />,
-			// },
+  {
+    path: '/',
+    element: <App />,
+    error: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Home />
+      }, 
+      {
+        path: '/login',
+        element: <Login />
+      }, {
+        path: '/signup',
+        element: <Signup />
+      },
+      // {game page,} //
+      {
+        path: '/gamepage',
+        element: <GamePage />
+      },
+     // {scores page}, //
+     {
+path: "Score",
+element:<Score/>
+     },
 
-			// {scores page}, //
+     {
+      path: '/highscore',
+      element: <Highscore />
+    },
+
 
 			{
 				path: '/me',

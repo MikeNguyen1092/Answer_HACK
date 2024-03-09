@@ -1,23 +1,27 @@
-const Score = () => {
 
-	function showHighScore() {
-		const highScore = getHighScoreFromLocalStorage();
-		alert(`High Score: ${highScore}`);
-	}
+const Score=()=> {
+//     function showHighScore() {
 
-	function getHighScoreFromLocalStorage() {
-		const savedScore = localStorage.getItem('highScore');
-		return savedScore || 'No high score yet';
-	}
+//         const highScore = g();
+//     alert(`High Score: ${highScore}`);
+//     }
 
-	return (
-		<main>
-			<div>
-				<h1>High score will go here</h1>
-			</div>
-			<button onClick={showHighScore}>HighScore</button>
-		</main>
-	);
+//     function getHighScoreFromLocalStorage() {
+//       const savedScore = localStorage.getItem('highScore');
+//       return savedScore || 'No high score yet';
+//     }
+
+return(
+<main>
+<div>
+<h1>"High score will go here"</h1></div>
+<div className="Score">
+</div>
+<button onClick="showHighScore()">HighScore
+</button>
+</main>
+
+);
 };
 
 export default Score;

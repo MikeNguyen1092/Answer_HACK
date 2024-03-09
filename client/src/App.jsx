@@ -9,9 +9,12 @@ import {
   
   import Header from './components/Header';
   import Footer from './components/Footer';
-  import 'bootstrap/dist/css/bootstrap.css';
-  import "./App.css";
-  import "./index.css";
+
+  import 'bootstrap/dist/css/bootstrap.css'
+  import "./App.css"
+  import "./index.css"
+  //import the comp score
+  import "./components/Score/index";
 
 
   // Construct our main GraphQL API endpoint
@@ -41,8 +44,8 @@ import {
   function App() {
     return (
       <ApolloProvider client={client}>
-        <div className="flex-column justify-flex-start min-100-vh">
-        <Header />
+        <div className="flex-column justify-flex-start min-100-vh min-100-vw">
+          <Header />
           <div className="container">
             <Outlet />
           </div>
