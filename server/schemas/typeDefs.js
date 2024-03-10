@@ -5,6 +5,7 @@ const typeDefs = `
     email: String
     password: String
     highScore: Int
+    questions: [Question]
   }
 
   type Question {
@@ -25,7 +26,7 @@ const typeDefs = `
     user(userId: ID!): User
     questions: [Question]
     question(questionId: ID!): Question
-    
+    me: User
   }
 
   type Mutation {

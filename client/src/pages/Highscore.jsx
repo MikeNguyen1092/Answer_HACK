@@ -10,3 +10,4 @@ const Highscore = () => {
 };
 
 export default Highscore;
+

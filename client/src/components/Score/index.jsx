@@ -1,3 +1,4 @@
+
 const Score=()=> {
 //     function showHighScore() {
 
@@ -24,5 +25,3 @@ return(
 };
 
 export default Score;
-
-  

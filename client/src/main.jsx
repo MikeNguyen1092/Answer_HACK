@@ -1,8 +1,7 @@
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom/dist'
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom/';
 
-
-import App from './App.jsx'
+import App from './App.jsx';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -44,10 +43,13 @@ element:<Score/>
       element: <Highscore />
     },
 
-    ]
-  }
-])
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
-)
+			{
+				path: '/me',
+				element: <User />
+			}
+		],
+	},
+]);
+
+ReactDOM.createRoot(document.getElementById('root')).render(<RouterProvider router={router} />);
