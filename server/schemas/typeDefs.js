@@ -33,6 +33,7 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addQuestion(questionText: String, choices: [String], answer: String): Question
+    deleteQuestion(questionId: ID!): Question
   }
 `;
 module.exports = typeDefs;

@@ -74,6 +74,11 @@ const resolvers = {
 			}
 			throw AuthenticationError;
 		},
+		deleteQuestion: async (_, { questionId }) => {
+      const deletedQuestion = await Question.findByIdAndDelete(questionId);
+
+      return deletedQuestion;
+    },
 	},
 };
 

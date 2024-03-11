@@ -1,18 +1,21 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_QUESTION } from '../../utils/mutations';
-import { useNavigate } from 'react-router-dom';
+
+import { QUERY_ME } from '../../utils/queries'
 
 
 
-const QuestionForm = () => {
+const AddQuestion = ({onSuccess}) => {
 	const [formState, setFormState] = useState({
 		questionText: '',
 		choices: [],
 		answer: '',
 	});
 
-	const [addQuestion, { error, data }] = useMutation(ADD_QUESTION);
+	const [addQuestionForm, { error, data }] = useMutation(ADD_QUESTION, {
+		refetchQueries: [{query: QUERY_ME}]
+	});
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -48,11 +51,10 @@ const QuestionForm = () => {
 		}));
 	};
 
-  const navigate = useNavigate();
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			const { data } = await addQuestion({
+			const { data } = await addQuestionForm({
 				variables: {
 					questionText: formState.questionText,
 					choices: formState.choices,
@@ -61,14 +63,16 @@ const QuestionForm = () => {
 			});
 
 			console.log('Question added successfully:', data);
+			if (onSuccess && typeof onSuccess === 'function') {
+        onSuccess();
+      }
       setFormState({
         questionText: '',
         choices: [],
         answer: '',
       });
-      navigate('/me');
-		} catch (error) {
 
+		} catch (error) {
 			console.error('Error adding question:', error.message);
 		}
 	};
@@ -131,4 +135,4 @@ const QuestionForm = () => {
 	);
 };
 
-export default QuestionForm;
+export default AddQuestion;
