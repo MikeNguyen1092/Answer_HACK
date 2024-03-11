@@ -2,51 +2,62 @@
 	{
 		"username": "BlueStar123",
 		"email": "bluestar123@example.com",
-		"password": "SecurePass123"
+		"password": "SecurePass123",
+		"highScore":"50000"
 	},
 	{
 		"username": "GreenDreamer",
 		"email": "greendreamer@example.com",
-		"password": "Secret12345"
+		"password": "Secret12345",
+		"highScore":"50000"
 	},
 	{
 		"username": "SilverFox22",
 		"email": "silverfox22@example.com",
-		"password": "StrongPassword"
+		"password": "StrongPassword",
+		"highScore":"50000"
 	},
 	{
 		"username": "PurpleSky",
 		"email": "purplesky@example.com",
-		"password": "Pass123word"
+		"password": "Pass123word",
+		"highScore":"50000"
 	},
 	{
 		"username": "Sunshine87",
 		"email": "sunshine87@example.com",
-		"password": "Sunbeam456"
+		"password": "Sunbeam456",
+		"highScore":"50000"
+		
 	},
 	{
 		"username": "Moonlighter",
 		"email": "moonlighter@example.com",
-		"password": "LunarPass789"
+		"password": "LunarPass789",
+		"highScore":"50000"
 	},
 	{
 		"username": "OceanExplorer",
 		"email": "oceanexplorer@example.com",
-		"password": "DeepBlue321"
+		"password": "DeepBlue321",
+		"highScore":"50000"
 	},
 	{
 		"username": "MountainHiker",
 		"email": "mountainhiker@example.com",
-		"password": "PeakClimb876"
+		"password": "PeakClimb876",
+		"highScore":"50000"
 	},
 	{
 		"username": "TechGeek99",
 		"email": "techgeek99@example.com",
-		"password": "CodeMaster234"
+		"password": "CodeMaster234",
+		"highScore":"50000"
 	},
 	{
 		"username": "AdventureSeeker",
 		"email": "adventureseeker@example.com",
-		"password": "ExploreNow567"
+		"password": "ExploreNow567",
+		"highScore":"50000"
 	}
 ]
