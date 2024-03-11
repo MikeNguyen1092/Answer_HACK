@@ -4,7 +4,7 @@ const Footer = () => {
 	const location = useLocation();
 	const navigate = useNavigate();
 	return (
-		<footer className="w-100 fixed-bottom bg-dark text-white p-1 style={{ minHeight: '50px', overflow: 'hidden' }}">
+		<footer className="w-100 fixed-bottom bg-dark text-white p-1 style={{ minHeight: '50px',  }}">
 			<div className="container text-center mb-1">
 				{location.pathname !== '/' && (
 					<button
