@@ -2,12 +2,14 @@
 	{
 		"username": "BlueStar123",
 		"email": "bluestar123@example.com",
-		"password": "SecurePass123"
+		"password": "SecurePass123",
+		"highScore": "50000"
 	},
 	{
 		"username": "GreenDreamer",
 		"email": "greendreamer@example.com",
-		"password": "Secret12345"
+		"password": "Secret12345",
+		"highScore": "50000"
 	},
 	{
 		"username": "SilverFox22",

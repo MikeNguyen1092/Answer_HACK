@@ -49,9 +49,10 @@ import {
           <div className="container">
             <Outlet />
           </div>
-          <Footer />
+         
           
         </div>
+        <Footer />
       </ApolloProvider>
     );
   }
