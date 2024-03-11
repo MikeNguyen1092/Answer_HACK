@@ -41,11 +41,13 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <main
+      className="flex-row justify-center mb-4 d-flex justify-content-center align-items-center"
+      style={{ minHeight: "80vh" }}>
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+        <h4 className="card-header bg-dark text-light p-2 text-center">Login</h4>
+          <div className="card-body d-flex flex-column align-items-center">
             {data ? (
               <p>
                 Success! You may now head{' '}
