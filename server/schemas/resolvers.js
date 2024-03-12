@@ -19,7 +19,13 @@ const resolvers = {
 		},
 		// By adding context to our query, we can retrieve the logged in user without specifically searching for them
 		questions: async () => {
-			return Question.find();
+			//fetch all questions
+			const allQuestions= await Question.find();
+
+			//shuffle the array for random questions
+			const shuffledQuestions = allQuestions.sort(() => Math.random() - 0.5);
+			return shuffledQuestions;
+
 		},
 		question: async (parent, { questionId }) => {
 			const question = Question.findOne({ _id: questionId });

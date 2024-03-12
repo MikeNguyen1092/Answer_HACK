@@ -9,18 +9,18 @@ const Home = () => {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    minHeight: '100vh',
+    minHeight: '80vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '20px',
+    padding: '10px',
   };
 
   return (
     <main style={pageStyle}>
       <div className="flex-row justify-center">
-        <h1 className="scrolling-text">Grab your drinks  lets get ready to rumble!!!</h1>
+        <h1 className="scrolling-text">Grab your drinks and get ready to streak to the quad!</h1>
       </div>
     </main>
   );

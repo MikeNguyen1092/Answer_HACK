@@ -80,7 +80,7 @@ const AddQuestion = ({onSuccess}) => {
 		<main className="flex-row justify-center mb-4 d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
 		  <div className="col-12 col-lg-10">
 			<div className="card">
-			  <h4 className="card-header bg-dark text-light p-2 text-center">Add Question</h4>
+			  <h4 className="card-header bg-light text-light p-2 text-center ">Add Question</h4>
 			  <div className="card-body d-flex flex-column align-items-center">
 				<form onSubmit={handleSubmit}>
 				  <label>
@@ -134,7 +134,7 @@ const AddQuestion = ({onSuccess}) => {
 				  </label>
 				  <br />
 	
-				  <button className="btn btn-block btn-primary" type="submit">
+				  <button className="btn btn-pills btn-primary" type="submit">
 					Add Question
 				  </button>
 				</form>
@@ -150,3 +150,4 @@ const AddQuestion = ({onSuccess}) => {
 };
 
 export default AddQuestion;
+
