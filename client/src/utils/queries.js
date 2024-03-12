@@ -55,3 +55,12 @@ export const QUERY_ME = gql`
 		}
 	}
 `;
+
+export const QUERY_HIGHSCORES = gql`
+query highScores {
+	users {
+	  highScore
+	  username
+	}
+  }
+`;

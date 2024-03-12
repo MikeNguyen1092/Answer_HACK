@@ -4,7 +4,7 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 const resolvers = {
 	Query: {
 		users: async () => {
-			return User.find();
+			return User.find().populate('highScore');
 		},
 
 		user: async (parent, { userId }) => {

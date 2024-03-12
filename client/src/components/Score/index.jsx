@@ -4,6 +4,7 @@ import React from 'react';
 const Score = () => {
 
   const showHighScore = () => {
+    
     // Add the logic to show high score
   };
 
