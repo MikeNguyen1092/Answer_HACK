@@ -41,7 +41,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="text-right">
-          <Link className="btn btn-lg btn-light m-3" to="/score">
+          <Link className="btn btn-lg btn-light m-3" to="/highscore">
             Highscores
           </Link>
         </div>

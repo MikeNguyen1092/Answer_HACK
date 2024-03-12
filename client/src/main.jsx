@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       },
       // {scores page}, //
       {
-        path: "Score",
+        path: "/Score",
         element: <Score />,
       },
 
