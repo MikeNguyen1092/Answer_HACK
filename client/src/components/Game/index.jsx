@@ -73,13 +73,6 @@ const QuestionsForm = () => {
   const handleChoiceClick = (choice) => {
     setUserChoice(choice);
     stopTimer();
-  
-
-
-  const handleNextQuestion = () => {
-   //stop the timer
-  stopTimer();
-   
 
     const correctAnswer = questions[currentQuestionIndex].answer;
     console.log(`userChoice = ${choice}`);

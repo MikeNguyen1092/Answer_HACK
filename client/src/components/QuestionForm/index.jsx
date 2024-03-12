@@ -26,6 +26,14 @@ const QuestionForm = ({ initialValues, onSuccess }) => {
 		}
 	}, [initialValues]);
 
+	useEffect(() => {
+		if (action === 'update') {
+			setMutationFunction(UPDATE_QUESTION);
+		} else {
+			setMutationFunction(ADD_QUESTION);
+		}
+	}, [action]);
+
 	const [performMutation, { error }] = useMutation(mutationFunction);
 
 	const handleChange = (event) => {
@@ -39,11 +47,18 @@ const QuestionForm = ({ initialValues, onSuccess }) => {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		try {
+			const variables = {
+				...formState,
+				refetchQueries: [{ query: QUERY_ME }],
+			};
+console.log(variables);
+			// Add questionId variable for update action
+			if (action === 'update') {
+				variables.questionId = initialValues.questionId;
+			}
+
 			const { data } = await performMutation({
-				variables: {
-					...(action === 'update' ? { questionId: initialValues._id } : {}),
-					...formState,
-				},
+				variables: { ...variables },
 				refetchQueries: [{ query: QUERY_ME }],
 			});
 			console.log('Question', action === 'update' ? 'updated' : 'added', 'successfully:', data);
@@ -61,6 +76,16 @@ const QuestionForm = ({ initialValues, onSuccess }) => {
 		} catch (error) {
 			console.error('Error', action === 'update' ? 'updating' : 'adding', 'question:', error.message);
 		}
+	};
+
+	const handleCancelUpdate = () => {
+		setAction('add');
+		setFormState({
+			questionText: '',
+			choices: [],
+			answer: '',
+		});
+		onSuccess(); // This will toggle off the form
 	};
 
 	return (
@@ -122,7 +147,7 @@ const QuestionForm = ({ initialValues, onSuccess }) => {
 				{action === 'update' && (
 					<button
 						type="button"
-						onClick={() => setAction('add')}>
+						onClick={handleCancelUpdate}>
 						Cancel Update
 					</button>
 				)}

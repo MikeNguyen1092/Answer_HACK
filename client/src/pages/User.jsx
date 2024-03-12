@@ -45,6 +45,7 @@ const User = () => {
 						questionText: selectedQuestion.questionText,
 						choices: selectedQuestion.choices,
 						answer: selectedQuestion.answer,
+						questionId: selectedQuestion._id,
 					}}
 					onSuccess={() => setSelectedQuestion(null)}
 				/>
