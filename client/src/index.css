@@ -4,8 +4,30 @@
 
 footer {
   height: auto;
-  /* position: absolute;
-  bottom: 0;
-  left: 0;
-  width: "100%"; */
+  width: "100%"; 
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateY(-50vh);
+  }
+  100% {
+    transform: translateY(50vh);
+  }
+}
+
+@keyframes strobeAnimation {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.scrolling-text {
+  color: white;
+  text-align: center;
+  position: relative;
+  animation: scrollAnimation 5s linear infinite, strobeAnimation 4s infinite; 
 }
