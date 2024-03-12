@@ -43,8 +43,8 @@ const resolvers = {
 	},
 
 	Mutation: {
-		addUser: async (parent, { username, email, password }) => {
-			const user = await User.create({ username, email, password });
+		addUser: async (parent, { username, email, password, highScore }) => {
+			const user = await User.create({ username, email, password, highScore });
 			const token = signToken(user);
 
 			return { token, user };
@@ -78,6 +78,34 @@ const resolvers = {
 
 				return question;
 			}
+			throw AuthenticationError;
+		},
+
+		deleteQuestion: async (_, { questionId }) => {
+      const deletedQuestion = await Question.findByIdAndDelete(questionId);
+
+      return deletedQuestion;
+    },
+
+		updateQuestion: async (_, { questionId, questionText, choices, answer }, context) => {
+			if (context.user) {
+
+				const question = await Question.findById(questionId);
+	
+				if (!question) {
+					throw new Error('No question with that ID');
+				}
+
+				// Update the question
+				const updatedQuestion = await Question.findByIdAndUpdate(
+					questionId,
+					{ questionText, choices, answer },
+					{ new: true }
+				);
+	
+				return updatedQuestion;
+			}
+	
 			throw AuthenticationError;
 		},
 	},

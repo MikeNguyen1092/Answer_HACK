@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import backgroundImage from '../assets/images/frank.gif';
-
-
+import '../index.css';
 
 
 const Home = () => {
-  
   const pageStyle = {
     backgroundImage: `url(${backgroundImage})`,
     backgroundSize: 'cover',
@@ -22,8 +20,7 @@ const Home = () => {
   return (
     <main style={pageStyle}>
       <div className="flex-row justify-center">
-        <h1 style={{ color: 'white', textAlign: 'center' }}>hello</h1>
-        {/* <QuestionsForm /> */}
+        <h1 className="scrolling-text">Grab your drinks  lets get ready to rumble!!!</h1>
       </div>
     </main>
   );

@@ -1,18 +1,20 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_QUESTION } from '../../utils/mutations';
-import { useNavigate } from 'react-router-dom';
+import { QUERY_ME } from '../../utils/queries'
 
 
 
-const QuestionForm = () => {
+const AddQuestion = ({onSuccess}) => {
 	const [formState, setFormState] = useState({
 		questionText: '',
 		choices: [],
 		answer: '',
 	});
 
-	const [addQuestion, { error, data }] = useMutation(ADD_QUESTION);
+	const [addQuestionForm, { error, data }] = useMutation(ADD_QUESTION, {
+		refetchQueries: [{query: QUERY_ME}]
+	});
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -48,11 +50,10 @@ const QuestionForm = () => {
 		}));
 	};
 
-  const navigate = useNavigate();
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			const { data } = await addQuestion({
+			const { data } = await addQuestionForm({
 				variables: {
 					questionText: formState.questionText,
 					choices: formState.choices,
@@ -61,74 +62,91 @@ const QuestionForm = () => {
 			});
 
 			console.log('Question added successfully:', data);
+			if (onSuccess && typeof onSuccess === 'function') {
+        onSuccess();
+      }
       setFormState({
         questionText: '',
         choices: [],
         answer: '',
       });
-      navigate('/me');
-		} catch (error) {
 
+		} catch (error) {
 			console.error('Error adding question:', error.message);
 		}
 	};
 
 	return (
-		<div>
-			<h2>Add Question</h2>
-			<form onSubmit={handleSubmit}>
-				<label>
+		<main className="flex-row justify-center mb-4 d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
+		  <div className="col-12 col-lg-10">
+			<div className="card">
+			  <h4 className="card-header bg-dark text-light p-2 text-center">Add Question</h4>
+			  <div className="card-body d-flex flex-column align-items-center">
+				<form onSubmit={handleSubmit}>
+				  <label>
 					Question Text:
 					<input
-						type="text"
-						name="questionText"
-						value={formState.questionText}
-						onChange={handleChange}
+					  className="form-input"
+					  type="text"
+					  name="questionText"
+					  value={formState.questionText}
+					  onChange={handleChange}
 					/>
-				</label>
-				<br />
-
-				<label>
+				  </label>
+				  <br />
+	
+				  <label>
 					Choices:
 					{formState.choices.map((choice, index) => (
-						<div key={index}>
-							<input
-								type="text"
-								value={choice}
-								onChange={(e) => handleChoiceChange(index, e.target.value)}
-							/>
-							<button
-								type="button"
-								onClick={() => handleRemoveChoice(index)}>
-								Remove
-							</button>
-						</div>
+					  <div key={index} className="mt-2">
+						<input
+						  className="form-input"
+						  type="text"
+						  value={choice}
+						  onChange={(e) => handleChoiceChange(index, e.target.value)}
+						/>
+						<button
+						  className="btn btn-danger btn-sm ml-2"
+						  type="button"
+						  onClick={() => handleRemoveChoice(index)}>
+						  Remove
+						</button>
+					  </div>
 					))}
 					<button
-						type="button"
-						onClick={handleAddChoice}>
-						Add Choice
+					  className="btn btn-primary mt-2"
+					  type="button"
+					  onClick={handleAddChoice}>
+					  Add Choice
 					</button>
-				</label>
-				<br />
-
-				<label>
+				  </label>
+				  <br />
+	
+				  <label>
 					Answer:
 					<input
-						type="text"
-						name="answer"
-						value={formState.answer}
-						onChange={handleChange}
+					  className="form-input"
+					  type="text"
+					  name="answer"
+					  value={formState.answer}
+					  onChange={handleChange}
 					/>
-				</label>
-				<br />
-
-				<button type="submit">Add Question</button>
-			</form>
-
-			{error && <p>Error: {error.message}</p>}
-		</div>
-	);
+				  </label>
+				  <br />
+	
+				  <button className="btn btn-block btn-primary" type="submit">
+					Add Question
+				  </button>
+				</form>
+	
+				{error && (
+				  <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
+				)}
+			  </div>
+			</div>
+		  </div>
+		</main>
+	  );
 };
 
-export default QuestionForm;
+export default AddQuestion;
