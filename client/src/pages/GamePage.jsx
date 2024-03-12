@@ -6,7 +6,7 @@ import Timer from "../components/Timer";
 const GamePage = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [countdown, setCountdown] = useState(30);
-  const [choice, setUserChoice] = useState("");
+  const [userChoice, setUserChoice] = useState("");
   const [score, setScore] = useState(0);
 
   const pageStyle = {

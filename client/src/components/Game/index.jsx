@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Timer from "../Timer";
 import { useQuery } from "@apollo/client";
 import { QUERY_QUESTION } from "../../utils/queries";
@@ -30,10 +30,7 @@ const QuestionsForm = () => {
 
 
 
-  const stopTimer = () => {
-    clearInterval(intervalRef.current);
-    setCountdown(10);
-  };
+
   
   const handleNextQuestion = useCallback(() => {
     if (currentQuestionIndex < questions.length - 1) {
@@ -82,7 +79,7 @@ const QuestionsForm = () => {
 
   const handleChoiceClick = (choice) => {
     setUserChoice(choice);
-    stopTimer();
+    
 
     const correctAnswer = questions[currentQuestionIndex].answer;
     if (choice === correctAnswer) {
@@ -105,12 +102,7 @@ const QuestionsForm = () => {
     // Reset the timer
     if (timerRef.current) {
       console.log("End of questions");
-<<<<<<<<< Temporary merge branch 1
 
-      setQuizOver(true);
-
-=========
->>>>>>>>> Temporary merge branch 2
     }
   };
 
