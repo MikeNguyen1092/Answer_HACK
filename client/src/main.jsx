@@ -9,6 +9,7 @@ import GamePage from './pages/GamePage';
 import Error from './pages/Error';
 import Highscore from './pages/Highscore.jsx';
 import Score from './components/Score/index.jsx';
+import User from './pages/User.jsx'
 
 const router = createBrowserRouter([
   {
