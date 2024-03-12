@@ -12,13 +12,14 @@ const GamePage = () => {
     backgroundSize: 'cover',  
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center', 
+    minHeight: '100vh',
 
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100vh',
-    width: '100vw',
+    height: '100%',
+    width: '100%',
     textAlign: 'center'
 
   };

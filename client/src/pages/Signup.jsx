@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
   });
   console.log(formState);
   const [addUser, { error, data }] = useMutation(ADD_USER);
@@ -40,14 +40,16 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <main
+      className="flex-row justify-center mb-4 d-flex justify-content-center align-items-center"
+      style={{ minHeight: "80vh" }}>
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+          <h4 className="card-header bg-dark text-light p-2 text-center">Sign Up</h4>
+          <div className="card-body d-flex flex-column align-items-center">
             {data ? (
               <p>
-                Success! You may now head{' '}
+                Success! You may now head{" "}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
@@ -78,7 +80,7 @@ const Signup = () => {
                 />
                 <button
                   className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   type="submit"
                 >
                   Submit

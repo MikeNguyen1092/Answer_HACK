@@ -8,8 +8,8 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-dark lighten-2 text-light mb-4 py-3">
-      <div className="container d-flex justify-content-between align-items-center">
+    <header className="bg-dark lighten-2 text-light mb-2 py-3">
+      <div className="container d-flex justify-content-between align-items-center my-3 ">
         <div className="text-left">
           {Auth.loggedIn() ? (
             <>
@@ -37,7 +37,7 @@ const Header = () => {
         <div className="text-center d-flex align-items-center">
           <Link className="text-light" to="/" style={{ textDecoration: 'none' }}>
             <h1 className="m-0">Tap Room Trivia</h1>
-            <p className="m-0">For every round you're not in first, you're last!</p>
+            <p className="m-0">For every round you're not first, you're last!</p>
           </Link>
           
         </div>
