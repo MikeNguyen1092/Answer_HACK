@@ -114,6 +114,7 @@ const QuestionsForm = () => {
       <p>Score: {score}</p>
     </div>
   );
+
 };
 
 export default QuestionsForm;
