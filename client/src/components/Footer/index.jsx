@@ -4,11 +4,11 @@ const Footer = () => {
 	const location = useLocation();
 	const navigate = useNavigate();
 	return (
-		<footer id="foot" className="w-100 bg-dark text-white p-1">
-			<div className="container text-center p-4">
+		<footer id="foot" className="w-100 bg-dark text-white">
+			<div className="container text-center p-1">
 				{location.pathname !== '/' && (
 					<button
-						className="btn btn-dark mb-3"
+						className="btn btn-dark p-1"
 						onClick={() => navigate(-1)}>
 						&larr; Go Back
 					</button>

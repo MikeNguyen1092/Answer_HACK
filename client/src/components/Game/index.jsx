@@ -8,10 +8,10 @@ const QuestionsForm = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const timerRef = useRef(null);
-  const [countdown, setCountdown] = useState(20);
+  const [countdown, setCountdown] = useState(30);
 
   const intervalRef = useRef(null);
-  const [userChoice, setUserChoice] = useState('');
+  const [userChoice, setUserChoice] = useState("");
   const [score, setScore] = useState(0);
 
   const { questions } = data || {};
@@ -20,23 +20,33 @@ const QuestionsForm = () => {
     clearInterval(intervalRef.current);
     setCountdown(10);
   };
+  
+  const handleNextQuestion = useCallback(() => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setCountdown(30);
+    } else {
+      console.log("End of questions");
+    }
+  }, [currentQuestionIndex, questions]);
 
- 
-
+  
   useEffect(() => {
     const intervalRef = setInterval(() => {
       setCountdown((prevCountdown) => {
         if (prevCountdown === 0) {
-          clearInterval(intervalRef.current);
-          return 20;
-
+          clearInterval(intervalRef);
+          handleNextQuestion();
+          return 30;
         }
         return prevCountdown - 1;
       });
     }, 1000);
 
     return () => clearInterval(intervalRef);
-  }, [currentQuestionIndex]);
+  }, [currentQuestionIndex, handleNextQuestion]);
+
+ 
 
   // Update score whenever it changes
   useEffect(() => {
@@ -49,72 +59,62 @@ const QuestionsForm = () => {
   const handleChoiceClick = (choice) => {
     setUserChoice(choice);
     stopTimer();
-  
-
-
-  const handleNextQuestion = () => {
-   //stop the timer
-  stopTimer();
-   
 
     const correctAnswer = questions[currentQuestionIndex].answer;
-    console.log(`userChoice = ${choice}`);
-    console.log(`correctAnswer = ${correctAnswer}`);
     if (choice === correctAnswer) {
-      console.log('correct')
+      console.log("correct");
       setScore((prevScore) => {
         console.log(`prevScore is ${prevScore}`);
         return prevScore + countdown * 100;
-      });    
-    }else{
-      console.log('incorrect answer')
+      });
+    } else {
+      console.log("incorrect answer");
     }
 
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setCountdown(30);
     } else {
-
       // Handle end of questions, for example, display a message or reset the index
-      console.log('End of questions');
-    
+      console.log("End of questions");
     }
     // Reset the timer
     if (timerRef.current) {
-
       console.log("End of questions");
-
     }
-
   };
 
   return (
     <div>
       <Timer countdown={countdown} />
-      <h2>Question {currentQuestionIndex + 1}</h2>
-      <p>{questions[currentQuestionIndex].questionText}</p>
-      <ul style={{ textAlign: "center", paddingLeft: 0, listStyle: "none" }}>
-        {questions[currentQuestionIndex].choices.map((choice, choiceIndex) => (
-          <li key={choiceIndex}>
-            <button
-              onClick={() => handleChoiceClick(choice)}
-              style={{
-                background: "none",
-                border: "none",
-                padding: "0",
-                margin: "0",
-                cursor: "pointer",
-              }}
-            >
-              {choice}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <p>Answer: {questions[currentQuestionIndex].answer}</p>
+      <div>
+        <h2>Question {currentQuestionIndex + 1}</h2>
+        <p>{questions[currentQuestionIndex].questionText}</p>
+        <ul style={{ textAlign: "center", paddingLeft: 0, listStyle: "none" }}>
+          {questions[currentQuestionIndex].choices.map(
+            (choice, choiceIndex) => (
+              <li key={choiceIndex}>
+                <button
+                  onClick={() => handleChoiceClick(choice)}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: "0",
+                    margin: "0",
+                    cursor: "pointer",
+                  }}
+                >
+                  {choice}
+                </button>
+              </li>
+            )
+          )}
+        </ul>
+        <p>Answer: {questions[currentQuestionIndex].answer}</p>
+      </div>
       <p>Score: {score}</p>
     </div>
   );
-
 };
 
 export default QuestionsForm;

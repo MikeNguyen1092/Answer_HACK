@@ -9,7 +9,7 @@ const Score = () => {
 
   return (
     
-    <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+    <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '80vh' }}>
       <div>
         <h1>High score will go here</h1>
       </div>
