@@ -35,3 +35,23 @@ mutation addQuestion($questionText: String, $choices: [String], $answer: String)
   }
 }
 `;
+
+export const DELETE_QUESTION = gql`
+  mutation deleteQuestion($questionId: ID!) {
+    deleteQuestion(questionId: $questionId) {
+      _id
+    }
+  }
+`;
+
+export const UPDATE_QUESTION = gql`
+mutation updateQuestion($questionId: ID!, $questionText: String, $choices: [String], $answer: String) {
+  updateQuestion(questionId: $questionId, questionText: $questionText, choices: $choices, answer: $answer) {
+    _id
+    answer
+    choices
+    questionAuthor
+    questionText
+  }
+}
+`;

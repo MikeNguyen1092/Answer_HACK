@@ -6,7 +6,10 @@ import { QUERY_QUESTION } from "../../utils/queries";
 const QuestionsForm = () => {
   const { loading, error, data } = useQuery(QUERY_QUESTION);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [countdown, setCountdown] = useState(10);
+
+  const timerRef = useRef(null);
+  const [countdown, setCountdown] = useState(20);
+
   const intervalRef = useRef(null);
   const [userChoice, setUserChoice] = useState('');
   const [score, setScore] = useState(0);
@@ -24,8 +27,9 @@ const QuestionsForm = () => {
     const intervalRef = setInterval(() => {
       setCountdown((prevCountdown) => {
         if (prevCountdown === 0) {
-          clearInterval(intervalRef);
-          return 10;
+          clearInterval(intervalRef.current);
+          return 20;
+
         }
         return prevCountdown - 1;
       });
@@ -46,6 +50,13 @@ const QuestionsForm = () => {
     setUserChoice(choice);
     stopTimer();
   
+
+
+  const handleNextQuestion = () => {
+   //stop the timer
+  stopTimer();
+   
+
     const correctAnswer = questions[currentQuestionIndex].answer;
     console.log(`userChoice = ${choice}`);
     console.log(`correctAnswer = ${correctAnswer}`);
@@ -58,10 +69,20 @@ const QuestionsForm = () => {
     }else{
       console.log('incorrect answer')
     }
+
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
+
+      // Handle end of questions, for example, display a message or reset the index
+      console.log('End of questions');
+    
+    }
+    // Reset the timer
+    if (timerRef.current) {
+
       console.log("End of questions");
+
     }
 
   };
@@ -93,6 +114,7 @@ const QuestionsForm = () => {
       <p>Score: {score}</p>
     </div>
   );
+
 };
 
 export default QuestionsForm;
