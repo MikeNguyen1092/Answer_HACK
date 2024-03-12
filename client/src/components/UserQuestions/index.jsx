@@ -32,6 +32,7 @@ const UserQuestions = ({ questions, onEditQuestion }) => {
         <p>Answer: {question.answer}</p>
 
         <button onClick={() => onEditQuestion(question)}>Edit</button>
+        <button onClick={() => handleDeleteQuestion(question._id)}>Delete</button>
       </div>
     ))}
   </div>
