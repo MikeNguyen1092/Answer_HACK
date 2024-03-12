@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import Timer from "../Timer";
 import { useQuery } from "@apollo/client";
 import { QUERY_QUESTION } from "../../utils/queries";
@@ -8,10 +8,24 @@ const QuestionsForm = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [countdown, setCountdown] = useState(10);
   const intervalRef = useRef(null);
-  const [userChoice, setUserChoice] = useState('');
+  const [ choice, setUserChoice] = useState('');
   const [score, setScore] = useState(0);
+  const [quizOver, setQuizOver] = useState(false);
 
   const { questions } = data || {};
+
+  useEffect(() => {
+    if (questions && questions.length > 0 ) {
+      // Shuffle the questions array to get random questions
+      const shuffledQuestions = questions.slice().sort(() => Math.random() - 0.5);
+      setCurrentQuestionIndex(0);
+      setScore(0);
+      setCountdown(10);
+      setQuizOver(false);
+    }
+  }, [questions]);
+
+
 
   const stopTimer = () => {
     clearInterval(intervalRef.current);
@@ -36,8 +50,18 @@ const QuestionsForm = () => {
 
   // Update score whenever it changes
   useEffect(() => {
-    console.log("Score updated:", score);
-  }, [score]);
+    console.log("Current question index:", currentQuestionIndex);
+    if (currentQuestionIndex>=10){
+      setQuizOver(true);
+    }
+  }, [score, currentQuestionIndex]);
+
+  if (quizOver) {
+    return <p>Quiz Over!
+      Your score is {score}!!
+    </p>;
+  }
+
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -62,6 +86,7 @@ const QuestionsForm = () => {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       console.log("End of questions");
+      setQuizOver(true);
     }
 
   };
