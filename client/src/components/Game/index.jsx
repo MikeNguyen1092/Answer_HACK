@@ -79,16 +79,7 @@ const QuestionsForm = () => {
 
   const handleChoiceClick = (choice) => {
     setUserChoice(choice);
-<<<<<<< HEAD
-    stopTimer();
-  
-
-
-  
-   
-=======
     
->>>>>>> 0e78735303e966a30ef93ed44670e5463d8e8ccf
 
     const correctAnswer = questions[currentQuestionIndex].answer;
     if (choice === correctAnswer) {
@@ -148,8 +139,4 @@ const QuestionsForm = () => {
   );
 };
 
-<<<<<<< HEAD
-export default {QuestionsForm} 
-=======
 export default QuestionsForm;
->>>>>>> 0e78735303e966a30ef93ed44670e5463d8e8ccf
