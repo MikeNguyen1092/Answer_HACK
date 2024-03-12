@@ -7,14 +7,14 @@ const QuestionsForm = () => {
   const { loading, error, data } = useQuery(QUERY_QUESTION);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const timerRef = useRef(null);
-  const [countdown, setCountdown] = useState(10);
+  const [countdown, setCountdown] = useState(20);
   const intervalRef = useRef(null);
   const startTimer = () => {
     intervalRef.current = setInterval(() => {
       setCountdown((prevCountdown) => {
         if (prevCountdown === 0) {
           clearInterval(intervalRef.current);
-          return 10;
+          return 20;
         }
         return prevCountdown - 1;
       });
@@ -41,13 +41,6 @@ const QuestionsForm = () => {
    //stop the timer
   stopTimer();
    
-   
-    //get the score
-
-    //go to next question
-
-    //restart the timer
-    //startTimer();
     // Check if there are more questions
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -55,8 +48,7 @@ const QuestionsForm = () => {
     } else {
       // Handle end of questions, for example, display a message or reset the index
       console.log('End of questions');
-      // You might want to reset the index to loop through questions again
-      // setCurrentQuestionIndex(0);
+    
     }
     // Reset the timer
     if (timerRef.current) {
