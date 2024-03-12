@@ -1,30 +1,23 @@
+import React from 'react';
+
 
 const Score = () => {
-    //     function showHighScore() {
 
-    //         const highScore = g();
-    //     alert(`High Score: ${highScore}`);
-    //     }
+  const showHighScore = () => {
+    // Add the logic to show high score
+  };
 
-    //     function getHighScoreFromLocalStorage() {
-    //       const savedScore = localStorage.getItem('highScore');
-    //       return savedScore || 'No high score yet';
-    //     }
-
-    return (
-        <main>
-            <div>
-                <h1>"High score will go here"</h1></div>
-           
-           
-            <script>
-
-            </script>
-
-
-        </main>
-
-    );
+  return (
+    
+    <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+      <div>
+        <h1>High score will go here</h1>
+      </div>
+      <div className="Score">
+        {/* Add your Score content here */}
+      </div>
+    </main>
+  );
 };
 
 export default Score;
