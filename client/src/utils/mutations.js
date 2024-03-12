@@ -43,3 +43,15 @@ export const DELETE_QUESTION = gql`
     }
   }
 `;
+
+export const UPDATE_QUESTION = gql`
+mutation updateQuestion($questionId: ID!, $questionText: String, $choices: [String], $answer: String) {
+  updateQuestion(questionId: $questionId, questionText: $questionText, choices: $choices, answer: $answer) {
+    _id
+    answer
+    choices
+    questionAuthor
+    questionText
+  }
+}
+`;

@@ -2,7 +2,7 @@ import { useMutation } from '@apollo/client';
 import { DELETE_QUESTION } from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries'
 
-const UserQuestions = ({ questions }) => {
+const UserQuestions = ({ questions, onEditQuestion }) => {
   const [deleteQuestion] = useMutation(DELETE_QUESTION, {
 		refetchQueries: [{query: QUERY_ME}]
 	});
@@ -19,22 +19,22 @@ const UserQuestions = ({ questions }) => {
   };
 
 	return (
-		<div>
-			<h2>Questions</h2>
-			{questions.map((question, index) => (
-				<div key={index}>
-					<p>{question.questionText}</p>
-					<ul>
-						{question.choices.map((choice, choiceIndex) => (
-							<li key={choiceIndex}>{choice}</li>
-						))}
-					</ul>
-					<p>Answer: {question.answer}</p>
-					{/* Add a delete button */}
-					<button onClick={() => handleDeleteQuestion(question._id)}>Delete Question</button>
-				</div>
-			))}
-		</div>
+<div>
+    <h2>Questions</h2>
+    {questions.map((question, index) => (
+      <div key={index}>
+        <p>{question.questionText}</p>
+        <ul>
+          {question.choices.map((choice, choiceIndex) => (
+            <li key={choiceIndex}>{choice}</li>
+          ))}
+        </ul>
+        <p>Answer: {question.answer}</p>
+
+        <button onClick={() => onEditQuestion(question)}>Edit</button>
+      </div>
+    ))}
+  </div>
 	);
 };
 
