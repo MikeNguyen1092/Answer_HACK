@@ -52,9 +52,7 @@ const QuestionsForm = () => {
   
 
 
-  const handleNextQuestion = () => {
-   //stop the timer
-  stopTimer();
+  
    
 
     const correctAnswer = questions[currentQuestionIndex].answer;
@@ -117,4 +115,4 @@ const QuestionsForm = () => {
 
 };
 
-export default QuestionsForm;
+export default {QuestionsForm} 
