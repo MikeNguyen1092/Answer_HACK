@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom/';
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom/";
 
 import App from './App.jsx';
 import Home from './pages/Home';
@@ -11,46 +11,49 @@ import Highscore from './pages/Highscore.jsx';
 import Score from './components/Score/index.jsx';
 import User from './pages/User.jsx'
 
+
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     error: <Error />,
     children: [
       {
         index: true,
-        element: <Home />
-      }, 
+        element: <Home />,
+      },
       {
-        path: '/login',
-        element: <Login />
-      }, {
-        path: '/signup',
-        element: <Signup />
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
       // {game page,} //
       {
-        path: '/gamepage',
-        element: <GamePage />
+        path: "/gamepage",
+        element: <GamePage />,
       },
-     // {scores page}, //
-     {
-path: "Score",
-element:<Score/>
-     },
+      // {scores page}, //
+      {
+        path: "Score",
+        element: <Score />,
+      },
 
-     {
-      path: '/highscore',
-      element: <Highscore />
-    },
+      {
+        path: "/highscore",
+        element: <Highscore />,
+      },
 
-
-			{
-				path: '/me',
-				element: <User />
-			}
-		],
-	},
+      {
+        path: "/me",
+        element: <User />,
+      },
+    ],
+  },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(<RouterProvider router={router} />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);

@@ -74,61 +74,76 @@ const QuestionForm = () => {
 	};
 
 	return (
-		<div>
-			<h2>Add Question</h2>
-			<form onSubmit={handleSubmit}>
-				<label>
+		<main className="flex-row justify-center mb-4 d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
+		  <div className="col-12 col-lg-10">
+			<div className="card">
+			  <h4 className="card-header bg-dark text-light p-2 text-center">Add Question</h4>
+			  <div className="card-body d-flex flex-column align-items-center">
+				<form onSubmit={handleSubmit}>
+				  <label>
 					Question Text:
 					<input
-						type="text"
-						name="questionText"
-						value={formState.questionText}
-						onChange={handleChange}
+					  className="form-input"
+					  type="text"
+					  name="questionText"
+					  value={formState.questionText}
+					  onChange={handleChange}
 					/>
-				</label>
-				<br />
-
-				<label>
+				  </label>
+				  <br />
+	
+				  <label>
 					Choices:
 					{formState.choices.map((choice, index) => (
-						<div key={index}>
-							<input
-								type="text"
-								value={choice}
-								onChange={(e) => handleChoiceChange(index, e.target.value)}
-							/>
-							<button
-								type="button"
-								onClick={() => handleRemoveChoice(index)}>
-								Remove
-							</button>
-						</div>
+					  <div key={index} className="mt-2">
+						<input
+						  className="form-input"
+						  type="text"
+						  value={choice}
+						  onChange={(e) => handleChoiceChange(index, e.target.value)}
+						/>
+						<button
+						  className="btn btn-danger btn-sm ml-2"
+						  type="button"
+						  onClick={() => handleRemoveChoice(index)}>
+						  Remove
+						</button>
+					  </div>
 					))}
 					<button
-						type="button"
-						onClick={handleAddChoice}>
-						Add Choice
+					  className="btn btn-primary mt-2"
+					  type="button"
+					  onClick={handleAddChoice}>
+					  Add Choice
 					</button>
-				</label>
-				<br />
-
-				<label>
+				  </label>
+				  <br />
+	
+				  <label>
 					Answer:
 					<input
-						type="text"
-						name="answer"
-						value={formState.answer}
-						onChange={handleChange}
+					  className="form-input"
+					  type="text"
+					  name="answer"
+					  value={formState.answer}
+					  onChange={handleChange}
 					/>
-				</label>
-				<br />
-
-				<button type="submit">Add Question</button>
-			</form>
-
-			{error && <p>Error: {error.message}</p>}
-		</div>
-	);
+				  </label>
+				  <br />
+	
+				  <button className="btn btn-block btn-primary" type="submit">
+					Add Question
+				  </button>
+				</form>
+	
+				{error && (
+				  <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
+				)}
+			  </div>
+			</div>
+		  </div>
+		</main>
+	  );
 };
 
 export default QuestionForm;
