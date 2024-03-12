@@ -105,7 +105,12 @@ const QuestionsForm = () => {
     // Reset the timer
     if (timerRef.current) {
       console.log("End of questions");
+<<<<<<<<< Temporary merge branch 1
 
+      setQuizOver(true);
+
+=========
+>>>>>>>>> Temporary merge branch 2
     }
   };
 
