@@ -8,47 +8,44 @@ const QuestionsForm = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const timerRef = useRef(null);
-  const [countdown, setCountdown] = useState(30);
+  const [countdown, setCountdown] = useState(20);
 
   const intervalRef = useRef(null);
-  const [userChoice, setUserChoice] = useState('');
+  const [userChoice, setUserChoice] = useState("");
   const [score, setScore] = useState(0);
   const [quizOver, setQuizOver] = useState(false);
 
   const { questions } = data || {};
 
   useEffect(() => {
-    if (questions && questions.length > 0 ) {
+    if (questions && questions.length > 0) {
       // Shuffle the questions array to get random questions
-      const shuffledQuestions = questions.slice().sort(() => Math.random() - 0.5);
+      const shuffledQuestions = questions
+        .slice()
+        .sort(() => Math.random() - 0.5);
       setCurrentQuestionIndex(0);
       setScore(0);
-      setCountdown(10);
+      setCountdown(20);
       setQuizOver(false);
     }
   }, [questions]);
 
-
-
-
-  
   const handleNextQuestion = useCallback(() => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setCountdown(30);
+      setCountdown(20);
     } else {
       console.log("End of questions");
     }
   }, [currentQuestionIndex, questions]);
 
-  
   useEffect(() => {
     const intervalRef = setInterval(() => {
       setCountdown((prevCountdown) => {
         if (prevCountdown === 0) {
           clearInterval(intervalRef);
           handleNextQuestion();
-          return 30;
+          return 20;
         }
         return prevCountdown - 1;
       });
@@ -57,29 +54,23 @@ const QuestionsForm = () => {
     return () => clearInterval(intervalRef);
   }, [currentQuestionIndex, handleNextQuestion]);
 
- 
-
   // Update score whenever it changes
   useEffect(() => {
     console.log("Current question index:", currentQuestionIndex);
-    if (currentQuestionIndex>=10){
+    if (currentQuestionIndex >= 10) {
       setQuizOver(true);
     }
   }, [score, currentQuestionIndex]);
 
   if (quizOver) {
-    return <p>Quiz Over!
-      Your score is {score}!!
-    </p>;
+    return <p>Quiz Over! Your score is {score}!!</p>;
   }
-
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   const handleChoiceClick = (choice) => {
     setUserChoice(choice);
-    
 
     const correctAnswer = questions[currentQuestionIndex].answer;
     if (choice === correctAnswer) {
@@ -94,7 +85,7 @@ const QuestionsForm = () => {
 
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setCountdown(30);
+      setCountdown(20);
     } else {
       // Handle end of questions, for example, display a message or reset the index
       console.log("End of questions");
@@ -102,7 +93,6 @@ const QuestionsForm = () => {
     // Reset the timer
     if (timerRef.current) {
       console.log("End of questions");
-
     }
   };
 
