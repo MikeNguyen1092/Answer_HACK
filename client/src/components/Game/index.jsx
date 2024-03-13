@@ -1,7 +1,15 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Timer from "../Timer";
+
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_QUESTION, UPDATE_HIGH_SCORE } from "../../utils/queries";
+
+
+import { QUERY_QUESTION } from "../../utils/queries";
+import startQuizAudio from "../../assets/audio/MusicaDeCirco-BennyHill.mp3";
+
+
+
 
 const QuestionsForm = () => {
   const { loading, error, data } = useQuery(QUERY_QUESTION);
@@ -13,7 +21,20 @@ const QuestionsForm = () => {
   const [score, setScore] = useState(0);
   const [quizOver, setQuizOver] = useState(false);
   const { questions } = data || {};
+
   const [updateHighScoreMutation] = useMutation(UPDATE_HIGH_SCORE);
+
+  const [quizStarted, setQuizStarted] = useState(false);
+
+  useEffect(() => {
+    if (!quizStarted) {
+      const audio = new Audio(startQuizAudio);
+      audio.play();
+      setQuizStarted(true);
+    }
+  }, [quizStarted]);
+
+
 
   useEffect(() => {
     if (questions && questions.length > 0) {
@@ -48,7 +69,6 @@ const QuestionsForm = () => {
         return prevCountdown - 1;
       });
     }, 1000);
-
     return () => clearInterval(intervalRef);
   }, [currentQuestionIndex, handleNextQuestion]);
 
@@ -59,14 +79,13 @@ const QuestionsForm = () => {
       setQuizOver(true);
     }
   }, [score, currentQuestionIndex]);
-
   if (quizOver) {
-    return <p>Quiz Over! Your score is {score}!!</p>;
+
+    return <p style={{textAlign:'center', fontSize: '4rem', marginTop: '200px'}}>Your score is {score}!!</p>;
   }
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
-
   const handleChoiceClick = (choice) => {
     setUserChoice(choice);
 
@@ -89,6 +108,7 @@ const QuestionsForm = () => {
       console.error('Error updating high score:', error);
     });
 
+
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setCountdown(20);
@@ -101,38 +121,36 @@ const QuestionsForm = () => {
       console.log("End of questions");
     }
   };
-
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       <Timer countdown={countdown} />
-      <div>
-        <h2>Question {currentQuestionIndex + 1}</h2>
+      <div style={{ textAlign: "center", marginBottom: "20px" }}>
         <p>{questions[currentQuestionIndex].questionText}</p>
-        <ul style={{ textAlign: "center", paddingLeft: 0, listStyle: "none" }}>
-          {questions[currentQuestionIndex].choices.map(
-            (choice, choiceIndex) => (
-              <li key={choiceIndex}>
-                <button
-                  onClick={() => handleChoiceClick(choice)}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: "0",
-                    margin: "0",
-                    cursor: "pointer",
-                  }}
-                >
-                  {choice}
-                </button>
-              </li>
-            )
-          )}
-        </ul>
-        <p>Answer: {questions[currentQuestionIndex].answer}</p>
       </div>
-      <p>Score: {score}</p>
+      <ul style={{ textAlign: "center", paddingLeft: 0, listStyle: "none", display: "grid", gap: "10px", gridTemplateColumns: "repeat(2, 1fr)" }}>
+        {questions[currentQuestionIndex].choices.map((choice, choiceIndex) => (
+          <li key={choiceIndex}>
+            <button
+              onClick={() => handleChoiceClick(choice)}
+              style={{
+                background: "none",
+                border: "none",
+                padding: "10px",
+                margin: "0",
+                cursor: "pointer",
+                width: "100%", 
+              }}
+            >
+              {choice}
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div style={{ marginTop: "20px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <p style={{ fontSize: "30px" }}>Player 1</p>
+        <p style={{ fontSize: "30px", fontWeight: "bold" }}>{score}</p>
+      </div>
     </div>
   );
 };
-
 export default QuestionsForm;

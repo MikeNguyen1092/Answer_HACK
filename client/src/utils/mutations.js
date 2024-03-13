@@ -55,3 +55,13 @@ mutation updateQuestion($questionId: ID!, $questionText: String, $choices: [Stri
   }
 }
 `;
+
+
+export const SUBMIT_SCORE_MUTATION = gql`
+  mutation SubmitScore($userId: ID!, $score: Int!) {
+    submitScore(userId: $userId, score: $score) {
+   success
+   message
+    }
+  }
+`;

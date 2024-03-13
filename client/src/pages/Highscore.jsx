@@ -1,4 +1,3 @@
-
 import { useQuery } from "@apollo/client";
 import { QUERY_HIGHSCORES } from "../utils/queries";
 
@@ -27,12 +26,13 @@ const Highscore = () => {
         </thead>
         <tbody>
           {highscores &&
-            highscores.map((highscore,i) => (
+            highscores.map((highscore, i) => (
               <>
-              <tr key={i}>
-                <th scope="row" >{i+1}</th>
-                <td>{highscore.highScore}</td>
-                <td>{highscore.username}</td></tr>
+                <tr key={i}>
+                  <th scope="row">{i + 1}</th>
+                  <td>{highscore.highScore}</td>
+                  <td>{highscore.username}</td>
+                </tr>
               </>
             ))}
         </tbody>
