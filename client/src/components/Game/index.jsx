@@ -4,8 +4,6 @@ import Timer from "../Timer";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_QUESTION, UPDATE_HIGH_SCORE } from "../../utils/queries";
 
-
-import { QUERY_QUESTION } from "../../utils/queries";
 import startQuizAudio from "../../assets/audio/MusicaDeCirco-BennyHill.mp3";
 
 
