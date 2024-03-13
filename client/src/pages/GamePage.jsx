@@ -5,7 +5,7 @@ import Timer from "../components/Timer";
 
 const GamePage = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [countdown, setCountdown] = useState(30);
+  const [countdown, setCountdown] = useState(20);
   const [userChoice, setUserChoice] = useState("");
   const [score, setScore] = useState(0);
 
@@ -34,41 +34,39 @@ const GamePage = () => {
 
   const handleChoiceClick = (choice) => {
     setUserChoice(choice);
-  
+
     const correctAnswer = questions[currentQuestionIndex].correctAnswer;
     if (choice === correctAnswer) {
       setScore((prevScore) => prevScore + countdown * 100);
     }
-  
+
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-      setCountdown(30); // Reset the timer for the next question
+      setCountdown(20); // Reset the timer for the next question
     } else {
-      console.log('End of questions');
+      console.log("End of questions");
       // Handle end of questions, for example, display a message or reset the index
     }
   };
 
-  useEffect(() => {
-    setCountdown(30);
-    const intervalId = setInterval(() => {
-      setCountdown((prevCountdown) => {
-        if (prevCountdown === 0) {
-          clearInterval(intervalId);
-          return 30;
-        }
-        return prevCountdown - 1;
-      });
-    }, 1000);
-  
-    return () => clearInterval(intervalId);
-  }, [countdown, currentQuestionIndex]);
+  // useEffect(() => {
+  //   setCountdown(20);
+  //   const intervalId = setInterval(() => {
+  //     setCountdown((prevCountdown) => {
+  //       if (prevCountdown === 0) {
+  //         clearInterval(intervalId);
+  //         return 20;
+  //       }
+  //       return prevCountdown - 1;
+  //     });
+  //   }, 1000);
+
+  //   return () => clearInterval(intervalId);
+  // }, [countdown, currentQuestionIndex]);
 
   return (
     <main style={pageStyle}>
       <h1>Beer related trivia while enjoying a couple of frosty ones!</h1>
-      
-      <Timer countdown={countdown} />
       <div>
         <div style={overlayStyle} className="flex-row justify-center text-bold">
           <QuestionsForm

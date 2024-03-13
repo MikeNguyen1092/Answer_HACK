@@ -2,85 +2,63 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import Timer from "../Timer";
 import { useQuery } from "@apollo/client";
 import { QUERY_QUESTION } from "../../utils/queries";
-
 const QuestionsForm = () => {
   const { loading, error, data } = useQuery(QUERY_QUESTION);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
   const timerRef = useRef(null);
-  const [countdown, setCountdown] = useState(30);
-
+  const [countdown, setCountdown] = useState(20);
   const intervalRef = useRef(null);
-  const [userChoice, setUserChoice] = useState('');
+  const [userChoice, setUserChoice] = useState("");
   const [score, setScore] = useState(0);
   const [quizOver, setQuizOver] = useState(false);
-
   const { questions } = data || {};
-
   useEffect(() => {
-    if (questions && questions.length > 0 ) {
+    if (questions && questions.length > 0) {
       // Shuffle the questions array to get random questions
-      const shuffledQuestions = questions.slice().sort(() => Math.random() - 0.5);
+      const shuffledQuestions = questions
+        .slice()
+        .sort(() => Math.random() - 0.5);
       setCurrentQuestionIndex(0);
       setScore(0);
-      setCountdown(10);
+      setCountdown(20);
       setQuizOver(false);
     }
   }, [questions]);
-
-
-
-
-  
   const handleNextQuestion = useCallback(() => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setCountdown(30);
+      setCountdown(20);
     } else {
       console.log("End of questions");
     }
   }, [currentQuestionIndex, questions]);
-
-  
   useEffect(() => {
     const intervalRef = setInterval(() => {
       setCountdown((prevCountdown) => {
         if (prevCountdown === 0) {
           clearInterval(intervalRef);
           handleNextQuestion();
-          return 30;
+          return 20;
         }
         return prevCountdown - 1;
       });
     }, 1000);
-
     return () => clearInterval(intervalRef);
   }, [currentQuestionIndex, handleNextQuestion]);
-
- 
-
   // Update score whenever it changes
   useEffect(() => {
     console.log("Current question index:", currentQuestionIndex);
-    if (currentQuestionIndex>=10){
+    if (currentQuestionIndex >= 10) {
       setQuizOver(true);
     }
   }, [score, currentQuestionIndex]);
-
   if (quizOver) {
-    return <p>Quiz Over!
-      Your score is {score}!!
-    </p>;
+    return <p style={{textAlign:'center', fontSize: '4rem', marginTop: '200px'}}>Your score is {score}!!</p>;
   }
-
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
-
   const handleChoiceClick = (choice) => {
     setUserChoice(choice);
-    
-
     const correctAnswer = questions[currentQuestionIndex].answer;
     if (choice === correctAnswer) {
       console.log("correct");
@@ -91,10 +69,9 @@ const QuestionsForm = () => {
     } else {
       console.log("incorrect answer");
     }
-
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setCountdown(30);
+      setCountdown(20);
     } else {
       // Handle end of questions, for example, display a message or reset the index
       console.log("End of questions");
@@ -102,41 +79,38 @@ const QuestionsForm = () => {
     // Reset the timer
     if (timerRef.current) {
       console.log("End of questions");
-
     }
   };
-
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       <Timer countdown={countdown} />
-      <div>
-        <h2>Question {currentQuestionIndex + 1}</h2>
+      <div style={{ textAlign: "center", marginBottom: "20px" }}>
         <p>{questions[currentQuestionIndex].questionText}</p>
-        <ul style={{ textAlign: "center", paddingLeft: 0, listStyle: "none" }}>
-          {questions[currentQuestionIndex].choices.map(
-            (choice, choiceIndex) => (
-              <li key={choiceIndex}>
-                <button
-                  onClick={() => handleChoiceClick(choice)}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: "0",
-                    margin: "0",
-                    cursor: "pointer",
-                  }}
-                >
-                  {choice}
-                </button>
-              </li>
-            )
-          )}
-        </ul>
-        <p>Answer: {questions[currentQuestionIndex].answer}</p>
       </div>
-      <p>Score: {score}</p>
+      <ul style={{ textAlign: "center", paddingLeft: 0, listStyle: "none", display: "grid", gap: "10px", gridTemplateColumns: "repeat(2, 1fr)" }}>
+        {questions[currentQuestionIndex].choices.map((choice, choiceIndex) => (
+          <li key={choiceIndex}>
+            <button
+              onClick={() => handleChoiceClick(choice)}
+              style={{
+                background: "none",
+                border: "none",
+                padding: "10px",
+                margin: "0",
+                cursor: "pointer",
+                width: "100%", 
+              }}
+            >
+              {choice}
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div style={{ marginTop: "20px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <p style={{ fontSize: "30px" }}>Player 1</p>
+        <p style={{ fontSize: "30px", fontWeight: "bold" }}>{score}</p>
+      </div>
     </div>
   );
 };
-
 export default QuestionsForm;
