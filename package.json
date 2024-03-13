@@ -26,6 +26,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.17",
     "bootstrap": "^5.3.3",
     "materialize": "^1.0.0",
+    "mongodb": "^6.5.0",
     "styled-components": "^6.1.8"
   }
 }
