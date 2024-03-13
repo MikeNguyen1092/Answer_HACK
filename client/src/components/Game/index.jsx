@@ -2,6 +2,10 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import Timer from "../Timer";
 import { useQuery } from "@apollo/client";
 import { QUERY_QUESTION } from "../../utils/queries";
+import startQuizAudio from "../../assets/audio/MusicaDeCirco-BennyHill.mp3";
+
+
+
 const QuestionsForm = () => {
   const { loading, error, data } = useQuery(QUERY_QUESTION);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -13,6 +17,17 @@ const QuestionsForm = () => {
   const [score, setScore] = useState(0);
   const [quizOver, setQuizOver] = useState(false);
   const { questions } = data || {};
+  const [quizStarted, setQuizStarted] = useState(false);
+
+  useEffect(() => {
+    if (!quizStarted) {
+      const audio = new Audio(startQuizAudio);
+      audio.play();
+      setQuizStarted(true);
+    }
+  }, [quizStarted]);
+
+
   useEffect(() => {
     if (questions && questions.length > 0) {
       // Shuffle the questions array to get random questions
