@@ -64,3 +64,19 @@ query highScores {
 	}
   }
 `;
+export const UPDATE_HIGH_SCORE = gql`
+	mutation UpdateHighScore($userId: ID!, $highScore: Int!) {
+		updateHighScore(userId: $userId, highScore: $highScore) {
+			_id
+			username
+			email
+			highScore
+			questions {
+				_id
+				questionText
+				choices
+				answer
+			}
+		}
+	}
+`;

@@ -1,21 +1,19 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Timer from "../Timer";
-import { useQuery } from "@apollo/client";
-import { QUERY_QUESTION } from "../../utils/queries";
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_QUESTION, UPDATE_HIGH_SCORE } from "../../utils/queries";
 
 const QuestionsForm = () => {
   const { loading, error, data } = useQuery(QUERY_QUESTION);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
   const timerRef = useRef(null);
   const [countdown, setCountdown] = useState(20);
-
   const intervalRef = useRef(null);
   const [userChoice, setUserChoice] = useState("");
   const [score, setScore] = useState(0);
   const [quizOver, setQuizOver] = useState(false);
-
   const { questions } = data || {};
+  const [updateHighScoreMutation] = useMutation(UPDATE_HIGH_SCORE);
 
   useEffect(() => {
     if (questions && questions.length > 0) {
@@ -82,6 +80,14 @@ const QuestionsForm = () => {
     } else {
       console.log("incorrect answer");
     }
+    // Update high score mutation
+    updateHighScoreMutation({
+      variables: { userId: 'yourUserId', highScore: score }, // Pass user ID and current score
+    }).then(() => {
+      console.log('High score updated successfully');
+    }).catch((error) => {
+      console.error('Error updating high score:', error);
+    });
 
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);

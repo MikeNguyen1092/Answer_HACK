@@ -115,29 +115,29 @@ const resolvers = {
 
       throw AuthenticationError;
     },
-    // updateHighScore: async (_, { highScore }, context) => {
-    //   // Ensure the user is authenticated
-    //   if (!context.user) {
-    //     throw new AuthenticationError(
-    //       "You must be logged in to update your high score"
-    //     );
-    //   }
+    updateHighScore: async (_, { highScore }, context) => {
+      // Ensure the user is authenticated
+      if (!context.user) {
+        throw new AuthenticationError(
+          "You must be logged in to update your high score"
+        );
+      }
 
-    //   try {
-    //     // Find the user by ID
-    //     const user = await User.findById(context.user._id);
+      try {
+        // Find the user by ID
+        const user = await User.findById(context.user._id);
 
-    //     // Update the high score if the new score is higher
-    //     if (!user.highScore || highScore > user.highScore) {
-    //       user.highScore = highScore;
-    //       await user.save();
-    //     }
+        // Update the high score if the new score is higher
+        if (!user.highScore || highScore > user.highScore) {
+          user.highScore = highScore;
+          await user.save();
+        }
 
-    //     return user;
-    //   } catch (error) {
-    //     throw new Error("Failed to update high score");
-    //   }
-    // },
+        return user;
+      } catch (error) {
+        throw new Error("Failed to update high score");
+      }
+    },
   },
 };
 
