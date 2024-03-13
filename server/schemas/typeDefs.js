@@ -54,6 +54,10 @@ const typeDefs = `
       choices: [String]
       answer: String
     ): Question
+    updateHighScore(
+      userId: ID!,
+      highScore: Int!
+    ): User
   }
 `;
 module.exports = typeDefs;
