@@ -1,8 +1,13 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Timer from "../Timer";
-import { useQuery } from "@apollo/client";
+
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_QUESTION, UPDATE_HIGH_SCORE } from "../../utils/queries";
+
+
 import { QUERY_QUESTION } from "../../utils/queries";
 import startQuizAudio from "../../assets/audio/MusicaDeCirco-BennyHill.mp3";
+
 
 
 
@@ -11,12 +16,14 @@ const QuestionsForm = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const timerRef = useRef(null);
   const [countdown, setCountdown] = useState(20);
-
   const intervalRef = useRef(null);
   const [userChoice, setUserChoice] = useState("");
   const [score, setScore] = useState(0);
   const [quizOver, setQuizOver] = useState(false);
   const { questions } = data || {};
+
+  const [updateHighScoreMutation] = useMutation(UPDATE_HIGH_SCORE);
+
   const [quizStarted, setQuizStarted] = useState(false);
 
   useEffect(() => {
@@ -26,6 +33,7 @@ const QuestionsForm = () => {
       setQuizStarted(true);
     }
   }, [quizStarted]);
+
 
 
   useEffect(() => {
@@ -91,6 +99,16 @@ const QuestionsForm = () => {
     } else {
       console.log("incorrect answer");
     }
+    // Update high score mutation
+    updateHighScoreMutation({
+      variables: { userId: 'yourUserId', highScore: score }, // Pass user ID and current score
+    }).then(() => {
+      console.log('High score updated successfully');
+    }).catch((error) => {
+      console.error('Error updating high score:', error);
+    });
+
+
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setCountdown(20);
