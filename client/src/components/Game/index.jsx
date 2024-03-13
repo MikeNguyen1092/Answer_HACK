@@ -11,6 +11,7 @@ const QuestionsForm = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const timerRef = useRef(null);
   const [countdown, setCountdown] = useState(20);
+
   const intervalRef = useRef(null);
   const [userChoice, setUserChoice] = useState("");
   const [score, setScore] = useState(0);
@@ -40,7 +41,6 @@ const QuestionsForm = () => {
     }
   }, [questions]);
 
-
   const handleNextQuestion = useCallback(() => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -49,8 +49,6 @@ const QuestionsForm = () => {
       console.log("End of questions");
     }
   }, [currentQuestionIndex, questions]);
-
-
 
   useEffect(() => {
     const intervalRef = setInterval(() => {
@@ -65,6 +63,7 @@ const QuestionsForm = () => {
     }, 1000);
     return () => clearInterval(intervalRef);
   }, [currentQuestionIndex, handleNextQuestion]);
+
   // Update score whenever it changes
   useEffect(() => {
     console.log("Current question index:", currentQuestionIndex);
@@ -73,12 +72,15 @@ const QuestionsForm = () => {
     }
   }, [score, currentQuestionIndex]);
   if (quizOver) {
+
     return <p style={{textAlign:'center', fontSize: '4rem', marginTop: '200px'}}>Your score is {score}!!</p>;
   }
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
   const handleChoiceClick = (choice) => {
     setUserChoice(choice);
+
     const correctAnswer = questions[currentQuestionIndex].answer;
     if (choice === correctAnswer) {
       console.log("correct");
