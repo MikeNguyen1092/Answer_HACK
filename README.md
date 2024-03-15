@@ -2,7 +2,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Welcome to Beer Trivia, the ultimate test of your beer knowledge! Whether you're a seasoned beer aficionado or just beginning to explore the world of craft brews, this game is for you. Dive into a journey through the fascinating history, styles, ingredients, and brewing techniques that make each beer unique.
+
+Gather your friends and family for a fun-filled trivia night, or enjoy a solo session to brush up on your beer IQ. With multiple levels of difficulty and hundreds of questions to explore, Beer Trivia guarantees endless entertainment for beer lovers of all levels.
+
+So grab a cold one, sit back, and let the games begin! Cheers to good times and great beers!
 
 
 ## Installation
@@ -16,7 +20,8 @@ Use examples liberally, and show the expected output if you can. It's helpful to
 
 
 ## Roadmap
-
+1. Record your high scores
+2. Show all time high scores
 
 ## Contributing
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
